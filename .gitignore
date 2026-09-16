@@ -1,0 +1,21 @@
+﻿# Local Backups & Drafts
+*.backup
+*.backup.html
+*.backup-*
+index.backup*
+index_v1.html
+
+# Agent & Tool Configurations
+.agents/
+.claude/
+.kilo/
+kilo.json
+skills-lock.json
+.system_generated/
+.tempmediaStorage/
+.user_uploaded/
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+*.log
