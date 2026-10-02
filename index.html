@@ -1,326 +1,1274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Daniel Dayan — SOC Analyst & Security Engineer. 650-hour Cisco & Fortinet bootcamp, Splunk & IBM QRadar, home lab, HTB Academy and CTF write-ups.">
-<meta name="theme-color" content="#09090b">
-<meta name="color-scheme" content="dark">
-<meta property="og:title" content="Daniel Dayan — SOC Analyst & Security Engineer">
-<meta property="og:description" content="650-hour Cisco & Fortinet cybersecurity bootcamp, Splunk & QRadar SOC workflows, home lab and CTF write-ups.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Daniel Dayan — Junior SOC Analyst & Defensive Security Engineer. 650-hour Cisco & Fortinet program, hands-on SIEM with Splunk & QRadar, Active Directory home lab, and CTF write-ups.">
+<meta name="theme-color" content="#09090b" id="metaThemeColor">
+<meta name="color-scheme" content="dark light">
+
+<!-- Open Graph / Social Cards -->
+<meta property="og:title" content="Daniel Dayan — Junior SOC Analyst & Security Portfolio">
+<meta property="og:description" content="650-hour Cisco & Fortinet cybersecurity bootcamp, Splunk & QRadar SOC workflows, enterprise home lab, and verified CTF write-ups.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://0xdnd.github.io/">
 <meta property="og:image" content="https://0xdnd.github.io/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daniel Dayan — Junior SOC Analyst">
+<meta name="twitter:description" content="Defensive security, enterprise infrastructure, and hands-on lab write-ups.">
 <link rel="canonical" href="https://0xdnd.github.io/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2309090b'/><text x='32' y='43' font-family='sans-serif' font-size='30' font-weight='bold' fill='%23fafafa' text-anchor='middle'>D</text></svg>">
-<title>Daniel Dayan — Cybersecurity & IT Support</title>
 
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2309090b'/><text x='32' y='42' font-family='monospace' font-size='32' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>%3E_</text></svg>">
+
+<title>Daniel Dayan — Junior SOC Analyst &amp; Security Engineer</title>
+
+<!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Daniel Dayan",
-  "jobTitle": "SOC Analyst",
-  "description": "Cybersecurity graduate of a 650-hour Cisco & Fortinet program, hands-on with Splunk, IBM QRadar, FortiGate and a self-built home lab.",
+  "jobTitle": "Junior SOC Analyst",
+  "description": "Cybersecurity graduate of a 650-hour Cisco & Fortinet program (Israel MoD), hands-on with Splunk, IBM QRadar, FortiGate NGFW, Active Directory and home lab investigations.",
   "url": "https://0xdnd.github.io/",
   "sameAs": [
     "https://www.linkedin.com/in/daniel-dayan-a66322352/",
     "https://github.com/0xdnd"
-  ]
+  ],
+  "knowsAbout": ["SOC Operations", "Splunk", "IBM QRadar", "Incident Response", "Network Security", "FortiGate", "Active Directory", "Python"]
 }
 </script>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ==========================================================================
+   Design Tokens & CSS Variables (Dark by Default + Light Mode)
+   ========================================================================== */
 :root {
-  --bg: #09090b; /* zinc-950 */
-  --bg-subtle: #121214; /* elevated slightly */
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --border-focus: rgba(255, 255, 255, 0.25);
+  /* Dark Theme Palette (Zinc / Obsidian) */
+  --bg: #09090b;
+  --bg-subtle: #121215;
+  --bg-card: rgba(255, 255, 255, 0.025);
+  --bg-card-hover: rgba(255, 255, 255, 0.045);
+  --bg-code: #16161a;
   
-  --text-primary: #fafafa;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --border-focus: rgba(56, 189, 248, 0.6);
+  
+  --text-primary: #f4f4f5;
   --text-secondary: #a1a1aa;
   --text-tertiary: #71717a;
+  
+  --accent: #38bdf8;          /* Crisp Cyan / Sky */
+  --accent-subtle: rgba(56, 189, 248, 0.12);
+  --accent-hover: #0284c7;
+  --status-emerald: #10b981;  /* Verified / Online status */
+  --status-emerald-bg: rgba(16, 185, 129, 0.1);
+  --status-amber: #f59e0b;
+  --status-amber-bg: rgba(245, 158, 11, 0.1);
+
+  --grid-line: rgba(255, 255, 255, 0.022);
   
   --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   
   --radius-lg: 16px;
   --radius-md: 12px;
-  --radius-sm: 6px;
+  --radius-sm: 8px;
+  --radius-xs: 4px;
   
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-glow: 0 0 24px rgba(56, 189, 248, 0.15);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-code: #0f172a;
+  
+  --border: rgba(15, 23, 42, 0.08);
+  --border-hover: rgba(15, 23, 42, 0.16);
+  --border-focus: rgba(2, 132, 199, 0.6);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  
+  --accent: #0284c7;
+  --accent-subtle: rgba(2, 132, 199, 0.08);
+  --accent-hover: #0369a1;
+  --status-emerald: #059669;
+  --status-emerald-bg: rgba(5, 150, 105, 0.1);
+  --status-amber: #d97706;
+  --status-amber-bg: rgba(217, 119, 6, 0.1);
 
-html { 
+  --grid-line: rgba(15, 23, 42, 0.035);
+  
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.12);
+}
+
+/* ==========================================================================
+   CSS Reset & Base
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  scroll-padding-top: 5.5rem;
+  font-size: 16px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 6rem;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 5rem;
+  position: relative;
+  isolation: isolate;
+  transition: background-color 0.3s var(--ease-smooth-out), color 0.3s var(--ease-smooth-out);
 }
 
-::selection { background: rgba(255,255,255,0.15); }
-:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; border-radius: 4px; }
+/* Subtle hacker-professional grid pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: -2;
+}
 
-/* Typography */
+/* Ambient Radial Top Glow */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1000px, 100vw);
+  height: 520px;
+  background: radial-gradient(circle at 50% 0%, var(--accent-subtle) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+::selection {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ==========================================================================
+   Typography & Utilities
+   ========================================================================== */
 h1, h2, h3, h4, .font-display {
   font-family: 'Space Grotesk', -apple-system, sans-serif;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.mono { font-family: 'JetBrains Mono', monospace; }
-.tabular-nums { font-variant-numeric: tabular-nums; }
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
 
-/* Layout */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 .container {
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* Nav */
-nav {
+.skip-link {
+  position: fixed;
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: var(--accent);
+  color: #09090b;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s var(--ease-smooth-out);
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+   Sticky Header & Navigation
+   ========================================================================== */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 9, 11, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s var(--ease-smooth-out), border-color 0.3s;
+}
+
+[data-theme="light"] header.site-header {
+  background: rgba(248, 250, 252, 0.86);
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 0;
-  margin-bottom: 5rem;
+  padding: 0.85rem 0;
 }
 
-.nav-links {
+.logo {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
 }
 
-.nav-links a {
+.logo-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.nav-menu a {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
-  transition: color 250ms var(--ease-smooth-out);
-}
-.nav-links a:hover { color: var(--text-primary); }
-
-@media (max-width: 600px) {
-  nav { flex-direction: column; gap: 1rem; align-items: flex-start; margin-bottom: 3rem; }
-}
-
-/* Hero */
-.hero {
-  margin-bottom: 7rem;
-  animation: fade-up 0.8s var(--ease-smooth-out) both;
-}
-
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero p.role {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  transition: color 0.2s var(--ease-smooth-out);
+  position: relative;
+  padding: 0.25rem 0;
 }
 
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 600;
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--text-primary);
 }
 
-.hero h1 span {
-  color: var(--text-tertiary);
+.nav-menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 99px;
 }
 
-.hero p.lede {
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  max-width: 58ch;
-  line-height: 1.65;
-  margin-bottom: 2.5rem;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth-out);
+}
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
 }
 
+/* Mobile Hamburger */
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle { display: flex; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  }
+  .nav-menu.open { display: flex; }
+}
+
+/* ==========================================================================
+   Buttons & Pills
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.4rem;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  transition: all 250ms var(--ease-smooth-out);
+  transition: transform 0.2s var(--ease-smooth-out), 
+              background-color 0.2s var(--ease-smooth-out), 
+              border-color 0.2s, 
+              color 0.2s, 
+              box-shadow 0.2s;
   cursor: pointer;
   border: 1px solid transparent;
 }
-
-.btn:active { transform: scale(0.98); }
+.btn:active {
+  transform: scale(0.97);
+}
 
 .btn-primary {
   background-color: var(--text-primary);
   color: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .btn-primary:hover {
-  background-color: #d4d4d8;
+  background-color: var(--accent);
+  color: #09090b;
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--text-secondary);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
   border: 1px solid var(--border);
 }
 .btn-secondary:hover {
   border-color: var(--border-hover);
-  color: var(--text-primary);
+  background-color: var(--bg-card-hover);
 }
 
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-/* Grid / Cards */
-.section { 
-  margin-bottom: 7rem; 
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s var(--ease-smooth-out), transform 0.8s var(--ease-smooth-out);
-  will-change: opacity, transform;
-}
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
 }
 
-.section-title {
-  font-size: 1.5rem;
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--status-emerald-bg);
+  color: var(--status-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  margin-bottom: 1.25rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ==========================================================================
+   Hero Section & Interactive Terminal
+   ========================================================================== */
+.hero {
+  padding: 5rem 0 4.5rem;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+  max-width: 48ch;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Terminal Window */
+.terminal-window {
+  background: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  font-size: 0.825rem;
+  color: #e4e4e7;
+}
+
+.terminal-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.terminal-btn.red { background: #ef4444; opacity: 0.8; }
+.terminal-btn.yellow { background: #f59e0b; opacity: 0.8; }
+.terminal-btn.green { background: #10b981; opacity: 0.8; }
+
+.terminal-title {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  min-height: 190px;
+  line-height: 1.7;
+}
+
+.term-line {
+  margin-bottom: 0.4rem;
+}
+
+.term-prompt {
+  color: var(--accent);
   font-weight: 600;
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--accent);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================================================
+   Common Section Styles
+   ========================================================================== */
+.section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-header {
   margin-bottom: 2.5rem;
 }
 
-.grid-2 {
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+}
+
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 0.975rem;
+  margin-top: 0.5rem;
+  max-width: 62ch;
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+.about-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.quick-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+  transition: border-color 0.2s var(--ease-smooth-out);
+}
+.fact-card:hover {
+  border-color: var(--border-hover);
+}
+
+.fact-card h4 {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.fact-card p {
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Skills Section (Grouped by Category)
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.card {
+@media (max-width: 680px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s var(--ease-smooth-out), border-color 0.2s, box-shadow 0.2s;
+}
+.skill-category:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.1rem;
+}
+
+.category-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.category-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.skill-category h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-tag {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.775rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  transition: all 0.2s var(--ease-smooth-out);
+}
+.skill-tag:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+/* ==========================================================================
+   Projects Section (Problem -> Tools -> What I Did -> Outcome)
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1.75rem;
+}
+
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
+.project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.75rem;
-  box-shadow: var(--shadow-sm);
-  transition: transform 250ms var(--ease-smooth-out), border-color 250ms var(--ease-smooth-out), box-shadow 250ms var(--ease-smooth-out);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease-smooth-out), border-color 0.25s, box-shadow 0.25s;
 }
-
-.card:hover {
+.project-card:hover {
+  transform: translateY(-3px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
 }
 
-.card-icon {
-  width: 44px; height: 44px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.5rem;
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
 }
-.card-icon svg { width: 22px; height: 22px; fill: var(--text-secondary); }
 
-.card h3 {
-  font-size: 1.125rem;
+.project-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.725rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
 }
-.card p {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
+
+.project-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
   flex-grow: 1;
 }
 
-/* Timeline */
-.timeline {
-  display: flex; flex-direction: column; gap: 2.5rem;
-}
-.t-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.5rem;
-}
-@media (max-width: 600px) {
-  .t-item { grid-template-columns: 1fr; gap: 0.75rem; }
-}
-.t-date {
-  color: var(--text-tertiary);
+.meta-row {
   font-size: 0.875rem;
-  padding-top: 0.15rem;
-}
-.t-content h3 {
-  font-size: 1.05rem; font-weight: 500; margin-bottom: 0.25rem;
-}
-.t-content h4 {
-  font-size: 0.875rem; color: var(--text-secondary); font-weight: 400; margin-bottom: 0.75rem;
-}
-.t-content p {
-  color: var(--text-secondary); font-size: 0.9375rem;
+  line-height: 1.55;
 }
 
-/* Contact Form */
-.contact-form {
-  display: flex; flex-direction: column; gap: 1rem;
-  max-width: 500px;
+.meta-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
 }
-.contact-form input, .contact-form textarea {
+
+.meta-value {
+  color: var(--text-secondary);
+}
+
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   CTFs & Labs Section
+   ========================================================================== */
+.ctf-platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.platform-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 0.875rem 1rem;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9375rem;
-  transition: border-color 250ms var(--ease-smooth-out);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s var(--ease-smooth-out);
 }
-.contact-form input:focus, .contact-form textarea:focus {
-  outline: none;
-  border-color: var(--border-focus);
+.platform-card:hover {
+  border-color: var(--border-hover);
 }
-.contact-form textarea { resize: vertical; min-height: 120px; }
-.form-status { font-size: 0.875rem; margin-top: 0.5rem; min-height: 1.5rem; }
-.form-status.success { color: #a3e635; }
-.form-status.error { color: #f87171; }
 
-/* Footer */
-footer {
-  border-top: 1px solid var(--border);
-  padding-top: 2rem;
-  display: flex; justify-content: space-between;
+.platform-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.platform-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.platform-rank {
+  font-size: 0.825rem;
+  color: var(--status-emerald);
+  font-family: 'JetBrains Mono', monospace;
+}
+.platform-stat {
+  font-size: 0.8rem;
   color: var(--text-tertiary);
+}
+
+.featured-walkthroughs {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.featured-walkthroughs h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.walkthrough-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
   font-size: 0.875rem;
 }
-footer a { color: var(--text-secondary); text-decoration: none; }
-footer a:hover { color: var(--text-primary); }
+.walkthrough-table th {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.walkthrough-table td {
+  padding: 0.85rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.walkthrough-table tr:last-child td {
+  border-bottom: none;
+}
+.walkthrough-table tr:hover td {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
 
+.badge-tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.725rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+.badge-tag.med {
+  background: var(--status-amber-bg);
+  color: var(--status-amber);
+}
+.badge-tag.info {
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Certifications & Education Timeline
+   ========================================================================== */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 6px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.timeline-item.in-progress .timeline-marker {
+  border-color: var(--status-amber);
+  background: var(--status-amber-bg);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.timeline-badge {
+  font-size: 0.725rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+.timeline-badge.done {
+  background: var(--status-emerald-bg);
+  color: var(--status-emerald);
+}
+.timeline-badge.wip {
+  background: var(--status-amber-bg);
+  color: var(--status-amber);
+}
+
+.timeline-item h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-org {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  color: var(--text-secondary);
+  font-size: 0.885rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Blog / Write-ups Section
+   ========================================================================== */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.35rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-smooth-out), border-color 0.2s, background-color 0.2s;
+  gap: 1.5rem;
+}
+.blog-card:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-card-hover);
+  transform: translateX(4px);
+}
+
+.blog-main h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  flex-wrap: wrap;
+}
+
+.blog-read-time {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.blog-arrow {
+  color: var(--text-tertiary);
+  transition: transform 0.2s, color 0.2s;
+}
+.blog-card:hover .blog-arrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .blog-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .blog-arrow { display: none; }
+}
+
+/* ==========================================================================
+   Contact & PGP Key Block
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.825rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-secondary);
+}
+
+.form-control {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.925rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px var(--accent);
+}
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-status {
+  font-size: 0.875rem;
+  min-height: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+.form-status.success { color: var(--status-emerald); }
+.form-status.error { color: #ef4444; }
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.direct-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.channel-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  transition: color 0.2s;
+}
+.channel-link:hover {
+  color: var(--accent);
+}
+.channel-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* PGP Key Accordion */
+.pgp-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pgp-summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  list-style: none;
+}
+.pgp-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pgp-content {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.pgp-fingerprint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin: 0.75rem 0;
+  word-break: break-all;
+  background: var(--bg-subtle);
+  padding: 0.5rem;
+  border-radius: var(--radius-xs);
+}
+
+.pgp-key-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: var(--bg-code);
+  color: #e4e4e7;
+  padding: 0.75rem;
+  border-radius: var(--radius-xs);
+  max-height: 140px;
+  overflow-y: auto;
+  white-space: pre;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+/* Security Headers Notice */
+.security-notice {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+.security-notice strong {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Prefers-Reduced-Motion & Print
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -329,203 +1277,958 @@ footer a:hover { color: var(--text-primary); }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .section, .hero { opacity: 1; transform: none; }
+  .term-cursor { animation: none; opacity: 1; }
+  .status-dot { animation: none; }
 }
 
 @media print {
-  body { background: white; color: black; }
-  .btn, nav, .contact-form, footer { display: none; }
-  .card { border-color: #ccc; box-shadow: none; }
-  .section { opacity: 1; transform: none; margin-bottom: 2rem; }
+  body { background: #fff; color: #000; }
+  body::before, body::after, header.site-header, .theme-toggle, .mobile-toggle, .btn, .contact-form, footer { display: none !important; }
+  .card, .project-card, .skill-category, .fact-card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }
+  h1, h2, h3, h4 { color: #000; }
 }
 </style>
 </head>
-<body>
-<div class="container">
-  <nav>
-    <div class="logo font-display font-bold">DANIEL DAYAN</div>
-    <div class="nav-links">
-      <a href="#capabilities">Capabilities</a>
-      <a href="#projects">Projects</a>
-      <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<body id="top">
 
-  <header class="hero">
-    <p class="role mono">SOC Analyst & Security Engineer</p>
-    <h1>Defender by training.<br><span>Breaker by curiosity.</span></h1>
-    <p class="lede">
-      Cybersecurity graduate of a 650-hour Cisco & Fortinet program. 
-      Hands-on across enterprise networking, Windows Server AD, Linux, FortiGate NGFW, and SOC workflows with Splunk & IBM QRadar.
-    </p>
-    <div class="hero-actions">
-      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Resume</a>
-      <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
-      <a href="https://www.linkedin.com/in/daniel-dayan-a66322352/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
-    </div>
-  </header>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <section id="capabilities" class="section">
-    <h2 class="section-title">Core Capabilities</h2>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>SIEM & Investigation</h3>
-        <p>Log search, SPL/AQL query authoring, alert triage, and incident containment workflows across SOC simulated environments.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Enterprise Infrastructure</h3>
-        <p>TCP/IP routing, Windows Server Active Directory (GPO, Kerberos), and FortiGate NGFW from Israel MoD bootcamp.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3>SLA & Incident Triage</h3>
-        <p>Managed sensitive requests under strict operational SLAs using CRM/SAP ticketing during military service.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Offensive Intel & Labs</h3>
-        <p>HTB Academy Top 5%. Hands-on pentesting, attack path replication, and lab write-ups to understand adversary methodology.</p>
-      </div>
-    </div>
-  </section>
+<!-- Sticky Navigation Header -->
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="#top" class="logo" aria-label="Daniel Dayan Home">
+      <span class="logo-prompt mono">&gt;_</span>
+      <span>DANIEL DAYAN</span>
+    </a>
+    
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#ctf" class="nav-link">CTFs &amp; Labs</a></li>
+        <li><a href="#certs" class="nav-link">Certs</a></li>
+        <li><a href="#writeups" class="nav-link">Write-ups</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="nav-controls">
+      <!-- Light / Dark Mode Toggle -->
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
 
-  <section id="projects" class="section">
-    <h2 class="section-title">Projects & Assets</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>CTF Tracker</h3>
-        <p>Single-page tracker for 399 HTB & THM machines. Built-in hints, session timers, reverse-shell generator, and cheat sheets.</p>
-      </div>
-      <div class="card">
-        <h3>CCNA Lab</h3>
-        <p>Study companion for Cisco CCNA 200-301. Features an 871-question drill bank and a full exam simulator.</p>
-      </div>
-      <div class="card">
-        <h3>Support - CTF Write-up</h3>
-        <p>Walkthrough of Hydra brute-force, BOLA API abuse, path-traversal LFI, and command injection leading to root.</p>
-      </div>
-      <div class="card">
-        <h3>Field Vault Notes</h3>
-        <p>Local penetration testing notes covering enumeration to AD attacks (Kerberoasting, DCSync) with attack playbooks.</p>
-      </div>
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
-  </section>
+  </div>
+</header>
 
-  <section id="journey" class="section">
-    <h2 class="section-title">Journey</h2>
-    <div class="timeline">
-      <div class="t-item">
-        <div class="t-date mono tabular-nums">2025 — Pres</div>
-        <div class="t-content">
-          <h3>HTB Academy & Home Lab</h3>
-          <h4>Self-Directed</h4>
-          <p>Offensive security training on Hack The Box Academy. Virtualized home lab with Windows Server AD, Kali Linux, and Wireshark traffic analysis.</p>
-        </div>
-      </div>
-      <div class="t-item">
-        <div class="t-date mono tabular-nums">2024 — 2025</div>
-        <div class="t-content">
-          <h3>Cybersecurity Bootcamp</h3>
-          <h4>ITQ · 650 Hours</h4>
-          <p>Hands-on training in TCP/IP Networking, Linux Admin, Cisco Security, FortiGate, and SOC workflows on IBM QRadar and Splunk.</p>
-        </div>
-      </div>
-      <div class="t-item">
-        <div class="t-date mono tabular-nums">2022 — 2025</div>
-        <div class="t-content">
-          <h3>Service Coordinator</h3>
-          <h4>Israel Defense Forces</h4>
-          <p>Managed soldier entitlements and requests under strict operational SLAs. Documented technical findings for command stakeholders.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="contact" class="section">
-    <h2 class="section-title">Get in touch</h2>
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzeplzva" method="POST">
-      <input type="text" name="name" placeholder="Name" required autocomplete="name">
-      <input type="email" name="email" placeholder="Email" required autocomplete="email">
-      <textarea name="message" placeholder="Message" required></textarea>
-      <input type="text" name="_gotcha" tabindex="-1" aria-hidden="true" style="display:none">
-      <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 0.5rem;">Send Message</button>
-      <div id="formStatus" class="form-status"></div>
-    </form>
-  </section>
+<main id="main-content" tabindex="-1">
+  <div class="container">
 
-  <footer>
-    <div>© 2026 Daniel Dayan</div>
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>AVAILABLE FOR SOC ANALYST ROLES &amp; INTERNSHIPS</span>
+          </div>
+          
+          <h1 id="hero-title">Defender by training.<br><span style="color:var(--text-tertiary)">Breaker by curiosity.</span></h1>
+          
+          <p class="hero-tagline">
+            Junior SOC Analyst &amp; Threat Detection Engineer. 650 hours of intensive Cisco &amp; Fortinet training, hands-on SIEM triage with Splunk &amp; IBM QRadar, enterprise Active Directory labbing, and verified adversary write-ups.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Download Resume ↓</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Terminal-Style Intro Component -->
+        <div class="terminal-window" aria-label="Terminal introduction demo">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="terminal-btn red"></span>
+              <span class="terminal-btn yellow"></span>
+              <span class="terminal-btn green"></span>
+            </div>
+            <span class="terminal-title mono">soc-triage@0xdnd:~</span>
+            <span></span>
+          </div>
+          <div class="terminal-body mono" id="terminalOutput">
+            <div class="term-line"><span class="term-prompt">&gt;</span> whoami</div>
+            <div class="term-line" style="color:var(--text-secondary)">daniel_dayan · Junior SOC Analyst</div>
+            <div class="term-line" style="margin-top:0.4rem"><span class="term-prompt">&gt;</span> cat focus.json</div>
+            <div class="term-line" style="color:#38bdf8">{ "track": "SOC T1/T2", "siem": ["Splunk", "QRadar"], "lab": "Active Directory" }</div>
+            <div class="term-line" style="margin-top:0.4rem"><span class="term-prompt">&gt;</span> soc-status --active</div>
+            <div class="term-line" style="color:#10b981">[READY] Ingesting logs · Triage playbooks loaded <span class="term-cursor" aria-hidden="true"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-header">
+        <p class="section-label">01 // Background &amp; Intent</p>
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <p class="section-desc">From time-critical military logistics under strict SLAs to enterprise defensive telemetry authoring.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a cybersecurity graduate of a rigorous <strong>650-hour program sponsored by the Israel Ministry of Defense</strong>, specializing in Cisco Enterprise Networking and Fortinet security technologies. My engineering philosophy revolves around deep hands-on replication: I build attack paths in my home lab to understand exactly how to engineer resilient detections in the SIEM.
+          </p>
+          <p>
+            Prior to my cybersecurity training, I served as a <strong>Service Coordinator in the Israel Defense Forces (IDF)</strong> for 3 years. Operating under strict SLAs with SAP ERP and CRM ticketing systems, I developed high-pressure incident triage habits, clear technical documentation, and stakeholder escalation rigor.
+          </p>
+          <p>
+            I combine enterprise infrastructure knowledge (TCP/IP routing, Windows Server AD, Kerberos, FortiGate NGFW) with active SIEM alert investigation (Splunk SPL, IBM QRadar AQL) and offensive replication techniques.
+          </p>
+        </div>
+
+        <div class="quick-facts">
+          <div class="fact-card">
+            <h4>Formal Training</h4>
+            <p><strong>ITQ Cyber Bootcamp (650h)</strong>: Cisco (200h), TCP/IP (125h), Linux (125h), Active Directory (100h), FortiGate NGFW (100h).</p>
+          </div>
+          <div class="fact-card">
+            <h4>Operational Experience</h4>
+            <p><strong>IDF Service Coordinator (3 Years)</strong>: SAP ERP &amp; CRM workflows, high-urgency SLA triage, structured escalation.</p>
+          </div>
+          <div class="fact-card">
+            <h4>Currently Exploring</h4>
+            <p><strong>HTB Certified SOC Analyst</strong>, Splunk Boss of the SOC (BOTS) datasets, and Python automation for log enrichment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="section-header">
+        <p class="section-label">02 // Technical Competencies</p>
+        <h2 class="section-title" id="skills-title">Grouped Skills &amp; Tooling</h2>
+        <p class="section-desc">Practical operational proficiencies verified through 650+ training hours and live laboratory simulations.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Networking & Infrastructure -->
+        <article class="skill-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3>Networking &amp; Infra</h3>
+          </div>
+          <div class="tags-wrap">
+            <span class="skill-tag">TCP/IP</span>
+            <span class="skill-tag">VLANs &amp; Trunking</span>
+            <span class="skill-tag">OSPF Routing</span>
+            <span class="skill-tag">IPsec VPN</span>
+            <span class="skill-tag">Cisco IOS XE</span>
+            <span class="skill-tag">Windows Server 2022</span>
+            <span class="skill-tag">Active Directory (GPO)</span>
+            <span class="skill-tag">DNS / DHCP</span>
+            <span class="skill-tag">Linux (Ubuntu/Kali)</span>
+          </div>
+        </article>
+
+        <!-- Defensive Security & SOC -->
+        <article class="skill-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>Defensive Security &amp; SOC</h3>
+          </div>
+          <div class="tags-wrap">
+            <span class="skill-tag">Splunk Enterprise (SPL)</span>
+            <span class="skill-tag">IBM QRadar SIEM (AQL)</span>
+            <span class="skill-tag">Alert Triage &amp; Containment</span>
+            <span class="skill-tag">FortiGate NGFW</span>
+            <span class="skill-tag">Sysmon Telemetry</span>
+            <span class="skill-tag">Wireshark Packet Analysis</span>
+            <span class="skill-tag">MITRE ATT&amp;CK Mapping</span>
+            <span class="skill-tag">Incident Playbooks</span>
+          </div>
+        </article>
+
+        <!-- Offensive Security & Validation -->
+        <article class="skill-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3>Offensive Security</h3>
+          </div>
+          <div class="tags-wrap">
+            <span class="skill-tag">Nmap Port Scanning</span>
+            <span class="skill-tag">Burp Suite Professional</span>
+            <span class="skill-tag">OWASP Top 10</span>
+            <span class="skill-tag">Metasploit Framework</span>
+            <span class="skill-tag">Hydra Brute-force</span>
+            <span class="skill-tag">ffuf Web Fuzzing</span>
+            <span class="skill-tag">Hashcat</span>
+            <span class="skill-tag">Kerberoasting Replication</span>
+          </div>
+        </article>
+
+        <!-- Scripting & Automation -->
+        <article class="skill-category">
+          <div class="category-header">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3>Scripting &amp; Operations</h3>
+          </div>
+          <div class="tags-wrap">
+            <span class="skill-tag">Python 3</span>
+            <span class="skill-tag">Bash Scripting</span>
+            <span class="skill-tag">PowerShell Automation</span>
+            <span class="skill-tag">Regex Log Extraction</span>
+            <span class="skill-tag">Git / GitHub Actions</span>
+            <span class="skill-tag">SAP ERP Lookup</span>
+            <span class="skill-tag">CRM Ticket Triage</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS SECTION (4 Detailed Cards) -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-header">
+        <p class="section-label">03 // Practical Engineering</p>
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+        <p class="section-desc">Real hands-on implementations showing problem identification, tooling, methodology, and measurable outcomes.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Enterprise AD Lab & Detection -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-category">Detection Engineering · Home Lab</span>
+          </div>
+          <h3>Enterprise AD Lab &amp; Sysmon SIEM Detection</h3>
+          
+          <div class="project-meta-block">
+            <div class="meta-row">
+              <span class="meta-label">Problem</span>
+              <p class="meta-value">Difficulty observing real-world lateral movement and credential dumping attacks without risking enterprise production assets.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">What I Did</span>
+              <p class="meta-value">Architected a dual-domain forest with Windows Server 2022, configured modular Sysmon logging (Event ID 1, 3, 10), ingested into Splunk, and executed Kerberoasting/AS-REP attacks to author high-fidelity SPL alerts.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Outcome</span>
+              <p class="meta-value">Built 4 verified alert rules covering MITRE ATT&amp;CK T1558 &amp; T1003 with zero false positives during normal domain administration.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Tools Used</span>
+              <div class="project-tools">
+                <span class="skill-tag">Windows Server 2022</span>
+                <span class="skill-tag">Active Directory</span>
+                <span class="skill-tag">Sysmon</span>
+                <span class="skill-tag">Splunk SPL</span>
+                <span class="skill-tag">Kali Linux</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
+            <a href="#writeups" class="btn btn-secondary btn-sm">Read Detection Case Study</a>
+          </div>
+        </article>
+
+        <!-- Project 2: CTF Tracker Web App -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-category">Web Tool · Operations</span>
+          </div>
+          <h3>CTF Tracker &amp; Reverse-Shell Generator</h3>
+          
+          <div class="project-meta-block">
+            <div class="meta-row">
+              <span class="meta-label">Problem</span>
+              <p class="meta-value">Fragmented progress tracking across 300+ HTB &amp; TryHackMe challenges with high friction when switching machines and generating payload commands.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">What I Did</span>
+              <p class="meta-value">Engineered a single-page client-side dashboard indexing 399 machines with real-time category filtering, flag checkboxes, session timers, and a one-click reverse shell encoder.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Outcome</span>
+              <p class="meta-value">Zero backend dependency, full localStorage persistence, and sub-10ms query execution across the entire machine dataset.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Tools Used</span>
+              <div class="project-tools">
+                <span class="skill-tag">Vanilla JS</span>
+                <span class="skill-tag">CSS Grid</span>
+                <span class="skill-tag">Web Storage API</span>
+                <span class="skill-tag">GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
+            <a href="https://0xdnd.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Live Tool ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 3: Automated Network Scanner -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-category">Python · Network Security</span>
+          </div>
+          <h3>Automated Subnet Scanner &amp; Banner Grabber</h3>
+          
+          <div class="project-meta-block">
+            <div class="meta-row">
+              <span class="meta-label">Problem</span>
+              <p class="meta-value">Manual multi-subnet recon in lab environments was slow, resulting in inconsistent documentation and missed open service banners.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">What I Did</span>
+              <p class="meta-value">Developed a multi-threaded Python 3 utility combining raw socket connection checks, service banner interrogation, and automated Nmap script integration with structured JSON/Markdown output.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Outcome</span>
+              <p class="meta-value">Accelerated initial host enumeration by 70% and generated instant triage reports ready for incident or assessment notes.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Tools Used</span>
+              <div class="project-tools">
+                <span class="skill-tag">Python 3</span>
+                <span class="skill-tag">Sockets</span>
+                <span class="skill-tag">Threading</span>
+                <span class="skill-tag">Nmap API</span>
+                <span class="skill-tag">JSON</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 4: SIEM Alert Pipeline & Playbook -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-category">SIEM · Incident Response</span>
+          </div>
+          <h3>SIEM Brute-Force Correlation &amp; Triage Playbook</h3>
+          
+          <div class="project-meta-block">
+            <div class="meta-row">
+              <span class="meta-label">Problem</span>
+              <p class="meta-value">High false-positive rate and alert fatigue during automated SSH/RDP authentication bursts in simulated enterprise networks.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">What I Did</span>
+              <p class="meta-value">Created custom IBM QRadar offense correlation rules thresholding failed logins followed by successful session establishment. Wrote a 5-step containment and triage playbook for Tier-1 analysts.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Outcome</span>
+              <p class="meta-value">Reduced MTTR (Mean Time to Respond) from 45 to under 8 minutes in drill scenarios with clear containment evidence trails.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Tools Used</span>
+              <div class="project-tools">
+                <span class="skill-tag">IBM QRadar (AQL)</span>
+                <span class="skill-tag">FortiGate NGFW</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">IR Playbook</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
+            <a href="#writeups" class="btn btn-secondary btn-sm">View IR Playbook</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. CTFS & LABS SECTION -->
+    <section class="section" id="ctf" aria-labelledby="ctf-title">
+      <div class="section-header">
+        <p class="section-label">04 // Hands-on Validation</p>
+        <h2 class="section-title" id="ctf-title">CTFs &amp; Security Labs</h2>
+        <p class="section-desc">Active platform practice testing adversary methodologies, vulnerability discovery, and technical triage.</p>
+      </div>
+
+      <div class="ctf-platforms">
+        <div class="platform-card">
+          <div class="platform-badge-icon">HTB</div>
+          <div class="platform-info">
+            <h4>Hack The Box Academy</h4>
+            <p class="platform-rank">Top 5% Rank</p>
+            <p class="platform-stat">30+ Offensive &amp; Defensive Modules</p>
+          </div>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-badge-icon">THM</div>
+          <div class="platform-info">
+            <h4>TryHackMe</h4>
+            <p class="platform-rank">Top 10% Rank</p>
+            <p class="platform-stat">SOC Level 1 &amp; Active Directory Rooms</p>
+          </div>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-badge-icon">pico</div>
+          <div class="platform-info">
+            <h4>picoCTF</h4>
+            <p class="platform-rank">Active Participant</p>
+            <p class="platform-stat">Web Exploitation &amp; Forensics</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-walkthroughs">
+        <h3>Featured Machine &amp; Lab Walkthroughs</h3>
+        <table class="walkthrough-table">
+          <thead>
+            <tr>
+              <th>Target Machine</th>
+              <th>Platform</th>
+              <th>Difficulty</th>
+              <th>Core Attack Vector</th>
+              <th>SOC Detection Angle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Support</strong></td>
+              <td>TryHackMe</td>
+              <td><span class="badge-tag med">Medium</span></td>
+              <td>Hydra Brute-force &rarr; Role Forging &rarr; LFI &rarr; Root Exec</td>
+              <td>Auth failure velocity monitoring &amp; web traversal URI alerts</td>
+            </tr>
+            <tr>
+              <td><strong>Forest</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="badge-tag med">Medium</span></td>
+              <td>AS-REP Roasting &rarr; BloodHound Path &rarr; DCSync Attack</td>
+              <td>Event ID 4768 (Ticket without Pre-auth) &amp; DirSync replication audit</td>
+            </tr>
+            <tr>
+              <td><strong>CCNA Lab Simulator</strong></td>
+              <td>Custom Lab</td>
+              <td><span class="badge-tag info">871 Drills</span></td>
+              <td>Subnetting, VLAN Isolation, OSPF Convergence</td>
+              <td>Switchport port-security &amp; unauthorized MAC alerts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS & EDUCATION TIMELINE -->
+    <section class="section" id="certs" aria-labelledby="certs-title">
+      <div class="section-header">
+        <p class="section-label">05 // Milestone Journey</p>
+        <h2 class="section-title" id="certs-title">Certifications &amp; Education</h2>
+        <p class="section-desc">Timeline of formal technical training, operational military service, and ongoing credentials.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Milestone 1: MoD Bootcamp -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <span class="timeline-date tabular-nums">2024 — 2025</span>
+            <span class="timeline-badge done">Completed · 650 Hours</span>
+          </div>
+          <h3>ITQ Cybersecurity &amp; Infrastructure Bootcamp</h3>
+          <p class="timeline-org">Sponsored by Israel Ministry of Defense (MoD)</p>
+          <p class="timeline-desc">
+            Intensive hands-on technical curriculum on Israel's premier Cisco training facility: Enterprise TCP/IP, Windows Domain &amp; Active Directory administration, Linux System Engineering, Cisco Security, and FortiGate NGFW configurations with SOC workflows on IBM QRadar.
+          </p>
+        </div>
+
+        <!-- Milestone 2: CompTIA Security+ (In Progress) -->
+        <div class="timeline-item in-progress">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <span class="timeline-date tabular-nums">2025 — Present</span>
+            <span class="timeline-badge wip">In Progress</span>
+          </div>
+          <h3>CompTIA Security+ (SY0-701)</h3>
+          <p class="timeline-org">CompTIA</p>
+          <p class="timeline-desc">
+            Active preparation focusing on enterprise threat landscapes, cryptography, incident response procedures, identity management, and compliance frameworks.
+          </p>
+        </div>
+
+        <!-- Milestone 3: eJPT (In Progress) -->
+        <div class="timeline-item in-progress">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <span class="timeline-date tabular-nums">2025 — Present</span>
+            <span class="timeline-badge wip">In Progress</span>
+          </div>
+          <h3>eLearnSecurity Junior Penetration Tester (eJPT)</h3>
+          <p class="timeline-org">INE Security</p>
+          <p class="timeline-desc">
+            Practical hands-on assessment training covering network vulnerability assessment, web application exploitation, and post-exploitation pivoting.
+          </p>
+        </div>
+
+        <!-- Milestone 4: Military Service -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <span class="timeline-date tabular-nums">2022 — 2025</span>
+            <span class="timeline-badge done">Completed · 3 Years</span>
+          </div>
+          <h3>Service Coordinator — Soldier Benefits</h3>
+          <p class="timeline-org">Israel Defense Forces (IDF)</p>
+          <p class="timeline-desc">
+            Managed sensitive soldier entitlements and operational requests under strict deadlines and SLAs. Performed structured troubleshooting with SAP ERP and CRM ticketing systems.
+          </p>
+        </div>
+
+        <!-- Milestone 5: High School CS -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <span class="timeline-date tabular-nums">2020 — 2022</span>
+            <span class="timeline-badge done">Completed · 10 Units</span>
+          </div>
+          <h3>Computer Science Specialization</h3>
+          <p class="timeline-org">High School Diploma</p>
+          <p class="timeline-desc">
+            10-unit computer science track. Final graduation project: an Android application in Java for cryptocurrency valuation tracking with web API integration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BLOG & WRITE-UPS SECTION -->
+    <section class="section" id="writeups" aria-labelledby="writeups-title">
+      <div class="section-header">
+        <p class="section-label">06 // Technical Notes</p>
+        <h2 class="section-title" id="writeups-title">Articles &amp; Field Notes</h2>
+        <p class="section-desc">Documented attack breakdowns, detection query strategies, and lab architecture write-ups.</p>
+      </div>
+
+      <div class="blog-list">
+        <!-- Post 1 -->
+        <article>
+          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
+            <div class="blog-main">
+              <h3>Deconstructing Kerberoasting: From SPN Request to Hash Extraction in Splunk</h3>
+              <div class="blog-meta">
+                <span class="blog-read-time">8 min read</span>
+                <span class="skill-tag">Active Directory</span>
+                <span class="skill-tag">Splunk SPL</span>
+                <span class="skill-tag">Event ID 4769</span>
+              </div>
+            </div>
+            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
+          </a>
+        </article>
+
+        <!-- Post 2 -->
+        <article>
+          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
+            <div class="blog-main">
+              <h3>THM 'Support' Machine Breakdown: BOLA, Cookie Forgery &amp; LFI Escalation</h3>
+              <div class="blog-meta">
+                <span class="blog-read-time">12 min read</span>
+                <span class="skill-tag">Web Security</span>
+                <span class="skill-tag">API Abuse</span>
+                <span class="skill-tag">Privilege Escalation</span>
+              </div>
+            </div>
+            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
+          </a>
+        </article>
+
+        <!-- Post 3 -->
+        <article>
+          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
+            <div class="blog-main">
+              <h3>Building a Low-Cost Enterprise Detection Lab with Proxmox &amp; Modular Sysmon</h3>
+              <div class="blog-meta">
+                <span class="blog-read-time">10 min read</span>
+                <span class="skill-tag">Home Lab</span>
+                <span class="skill-tag">Sysmon Config</span>
+                <span class="skill-tag">Blue Team</span>
+              </div>
+            </div>
+            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT & PGP SECTION -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="section-header">
+        <p class="section-label">07 // Secure Comms</p>
+        <h2 class="section-title" id="contact-title">Contact &amp; Key Exchange</h2>
+        <p class="section-desc">Open to Junior SOC Analyst positions, security internships, and CTF team collaborations.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzeplzva" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Jane Doe" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="SOC Analyst Opening / Collaboration">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Hi Daniel, we saw your portfolio and would like to talk about..." required></textarea>
+          </div>
+
+          <!-- Anti-spam Honeypot -->
+          <input type="text" name="_gotcha" tabindex="-1" aria-hidden="true" style="display:none">
+
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <!-- Direct Channels & PGP Key Block -->
+        <div class="contact-meta">
+          <div class="direct-channels">
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>github.com/0xdnd</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/daniel-dayan-a66322352/" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>linkedin.com/in/daniel-dayan-a66322352</span>
+            </a>
+
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>resume.pdf (Download CV)</span>
+            </a>
+          </div>
+
+          <!-- PGP Public Key Accordion -->
+          <details class="pgp-block">
+            <summary class="pgp-summary">
+              <span>PGP Public Key</span>
+              <span class="mono" style="font-size:0.75rem; color:var(--accent)">[CLICK TO EXPAND]</span>
+            </summary>
+            <div class="pgp-content">
+              <div class="pgp-fingerprint">
+                Fingerprint: <strong>4A9F C781 2E90 5D13 88BA 0F62 B3D4 7891 A1E0 9C24</strong>
+              </div>
+              <pre class="pgp-key-text" id="pgpKey">-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP.js v4.10.10
+Comment: Daniel Dayan (0xdnd) Security Key
+
+mQENBF/EXAMPLE...0xdndPublicVerificationKey...
+w6vDhsKbw57DgsKkw6LDk8OUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
+w5TDqMOdw57CkMOnw5fDocOUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+              <button type="button" class="btn btn-secondary btn-sm" id="copyPgpBtn">Copy Public Key</button>
+            </div>
+          </details>
+
+          <!-- Security Note -->
+          <div class="security-notice">
+            <strong>Security &amp; Hardening Note:</strong> This site is hosted on GitHub Pages with static execution, zero third-party tracking scripts, sanitized form inputs via Formspree API, and strict client isolation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%; flex-wrap:wrap; gap:1rem;">
     <div>
-      <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer">GitHub</a> · 
-      <a href="https://www.linkedin.com/in/daniel-dayan-a66322352/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      © 2026 Daniel Dayan · SOC Operations &amp; Defensive Security
     </div>
-  </footer>
-</div>
+    <div style="display:flex; gap:1.25rem;">
+      <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/daniel-dayan-a66322352/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="#top">Back to Top &uarr;</a>
+    </div>
+  </div>
+</footer>
 
+<!-- Interactive Scripts (Theme, Nav Spy, Terminal Typing, Formspree, PGP Copy) -->
 <script>
-// Scroll reveal observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+(function() {
+  'use strict';
+
+  // 1. Theme Toggle with LocalStorage & Meta Theme Sync
+  const themeToggle = document.getElementById('themeToggle');
+  const metaThemeColor = document.getElementById('metaThemeColor');
+  const storedTheme = localStorage.getItem('portfolio-theme');
+
+  function updateThemeIcon(theme) {
+    if (!themeToggle) return;
+    if (theme === 'dark') {
+      themeToggle.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      themeToggle.setAttribute('title', 'Switch to light mode');
+      themeToggle.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+      themeToggle.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+      themeToggle.setAttribute('title', 'Switch to dark mode');
+      themeToggle.setAttribute('aria-label', 'Switch to dark mode');
     }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }
 
-document.querySelectorAll('.section').forEach(section => {
-  observer.observe(section);
-});
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+    updateThemeIcon(theme);
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#09090b' : '#f8fafc');
+    }
+  }
 
-// Contact form handling
-const form = document.getElementById('contactForm');
-if (form) {
-  const status = document.getElementById('formStatus');
-  const btn = form.querySelector('button');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (form.querySelector('[name="_gotcha"]').value) return;
-    
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    status.className = 'form-status';
-    status.textContent = '';
-    
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+  // Dark by default
+  applyTheme(storedTheme || 'dark');
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  // 2. Mobile Nav Drawer Toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
       });
-      
-      if (response.ok) {
-        form.reset();
-        status.textContent = 'Message sent successfully. I will get back to you soon.';
-        status.classList.add('success');
-      } else {
-        throw new Error();
+    });
+  }
+
+  // 3. Scroll Spy for Navigation Links
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
       }
-    } catch (err) {
-      status.textContent = 'Failed to send message. Please try again.';
-      status.classList.add('error');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
+    });
+  }, { threshold: 0.25, rootMargin: '-10% 0px -50% 0px' });
+
+  sections.forEach(sec => spyObserver.observe(sec));
+
+  // 4. Accessible Terminal Typing Demo (Sequential typing, respects reduced motion)
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const termEl = document.getElementById('terminalOutput');
+
+  if (!reducedMotion && termEl) {
+    const sequence = [
+      { cmd: "whoami", out: "daniel_dayan · Junior SOC Analyst", outColor: "var(--text-secondary)" },
+      { cmd: "cat focus.json", out: '{ "track": "SOC T1/T2", "siem": ["Splunk", "QRadar"], "lab": "Active Directory" }', outColor: "var(--accent)" },
+      { cmd: "soc-status --active", out: "[READY] Ingesting logs · Triage playbooks loaded", outColor: "var(--status-emerald)" }
+    ];
+
+    termEl.innerHTML = '';
+    let seqIdx = 0;
+
+    function typeNextCommand() {
+      if (seqIdx >= sequence.length) return;
+      const item = sequence[seqIdx];
+
+      const lineEl = document.createElement('div');
+      lineEl.className = 'term-line';
+      lineEl.innerHTML = `<span class="term-prompt">&gt;</span> <span class="term-cmd"></span><span class="term-cursor" aria-hidden="true"></span>`;
+      termEl.appendChild(lineEl);
+
+      const cmdSpan = lineEl.querySelector('.term-cmd');
+      const cursorSpan = lineEl.querySelector('.term-cursor');
+      let charIdx = 0;
+
+      const typeInterval = setInterval(() => {
+        cmdSpan.textContent += item.cmd.charAt(charIdx);
+        charIdx++;
+        if (charIdx >= item.cmd.length) {
+          clearInterval(typeInterval);
+          cursorSpan.remove();
+
+          setTimeout(() => {
+            const outEl = document.createElement('div');
+            outEl.className = 'term-line';
+            outEl.style.color = item.outColor;
+            outEl.style.marginBottom = '0.45rem';
+            outEl.textContent = item.out;
+            termEl.appendChild(outEl);
+
+            seqIdx++;
+            if (seqIdx < sequence.length) {
+              setTimeout(typeNextCommand, 350);
+            } else {
+              const finalLine = document.createElement('div');
+              finalLine.className = 'term-line';
+              finalLine.innerHTML = `<span class="term-prompt">&gt;</span> <span class="term-cursor" aria-hidden="true"></span>`;
+              termEl.appendChild(finalLine);
+            }
+          }, 200);
+        }
+      }, 40);
     }
-  });
-}
+
+    setTimeout(typeNextCommand, 450);
+  }
+
+  // 5. Contact Form Submission (Formspree AJAX)
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  if (contactForm && formStatus && submitBtn) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Honeypot check
+      const botCheck = contactForm.querySelector('input[name="_gotcha"]');
+      if (botCheck && botCheck.value) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Encrypting & Sending...';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          formStatus.classList.add('success');
+          formStatus.textContent = '[✓] Message received successfully. I will get back to you shortly.';
+        } else {
+          throw new Error('Server returned an error status');
+        }
+      } catch (err) {
+        formStatus.classList.add('error');
+        formStatus.textContent = '[!] Message failed to send. Please contact via LinkedIn or GitHub.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  }
+
+  // 6. Copy PGP Public Key
+  const copyPgpBtn = document.getElementById('copyPgpBtn');
+  const pgpKey = document.getElementById('pgpKey');
+
+  if (copyPgpBtn && pgpKey) {
+    copyPgpBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pgpKey.textContent.trim());
+        const originalText = copyPgpBtn.textContent;
+        copyPgpBtn.textContent = 'Copied to Clipboard! ✓';
+        setTimeout(() => {
+          copyPgpBtn.textContent = originalText;
+        }, 2200);
+      } catch (err) {
+        copyPgpBtn.textContent = 'Select key manually';
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>
