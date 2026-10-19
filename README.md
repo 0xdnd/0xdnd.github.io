@@ -2,7 +2,7 @@
 
 # `>_ DANIEL DAYAN`
 
-**Junior SOC Analyst & Junior Penetration Tester (CPTS & CWES Candidate)**
+**Junior SOC Analyst & Junior Penetration Tester**
 
 [![Live Site](https://img.shields.io/badge/Portfolio-0xdnd.github.io-00e58d?style=for-the-badge&logo=googlechrome&logoColor=black)](https://0xdnd.github.io)
 [![ZeroBox](https://img.shields.io/badge/Open_Source-ZeroBox_(ctftracker.com)-38bdf8?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://ctftracker.com)
@@ -17,54 +17,52 @@
 
 ## >_ About
 
-Cybersecurity professional targeting Junior SOC Analyst and Junior Penetration Tester roles, combining hands-on offensive awareness with disciplined blue-team defense:
-- **Creator of [ZeroBox](https://ctftracker.com) ([GitHub: 0xdnd/ctf-tracker](https://github.com/0xdnd/ctf-tracker))** — an open-source penetration testing workspace in React & TypeScript reaching 4,000+ visitors (web app and Tauri desktop app). Features a catalog of 1,000+ HTB & THM machines, 131 reverse shell templates, 8-phase methodology, multi-host Nmap XML importer with one-click attack graph generation, masked credential & hash evidence vault, CVSS v3.1 Markdown report generator, and timed exam simulator for OSCP, CPTS, CRTO, OSEP, CRTP with one-click ZIP submission bundle export.
-- **50+ Hack The Box machines rooted (2 active: Reactor & Kobold)**, taking each from reconnaissance and initial access through privilege escalation to full system compromise, plus 30 completed HTB Academy modules.
-- **Enterprise Active Directory Homelab** — dual-domain Windows Server 2022 forest with Sysmon (Event ID 1/3/10) telemetry, FortiGate NGFW, and Splunk SPL detection rules for Kerberoasting, AS-REP roasting, and DCSync.
-- **650-Hour Cyber Security Implementer Program** at ITQ College (2024 - 2025, Cisco and Fortinet specialization): Cisco IOS XE (VLANs, 802.1Q, OSPF, RIPv2, HSRP, ACLs, NAT, GRE & IPsec VPNs), FortiGate NGFW (simulated two-site Israel-USA network), Windows Server 2022 Active Directory & GPO, LPI Linux Essentials & Kali/Ubuntu administration, and IBM Security QRadar SIEM with WinCollect & Splunk SOAR.
-- **HTB Academy Candidate** — actively preparing for HTB Certified Penetration Testing Specialist (CPTS) and Certified Web Exploitation Specialist (CWES).
-- **3-year IDF military service** — Service Coordinator investigating hundreds of sensitive soldier entitlement cases in SAP, maintaining data confidentiality and resolution accuracy under daily SLAs and CRM workflows.
+Junior SOC analyst and junior penetration tester. Trained on QRadar, Splunk SOAR and Fortinet at ITQ; I practise Active Directory attacks in my own lab.
+
+**Central Israel · Available immediately · Hebrew & English**
+
+- **Creator of [ZeroBox](https://ctftracker.com) ([GitHub: 0xdnd/ctf-tracker](https://github.com/0xdnd/ctf-tracker))**: an open-source penetration testing workspace in React & TypeScript with 4,000+ visitors (web app and Tauri desktop app). Features a catalog of 1,000+ HTB & THM machines, 131 reverse shell templates, an 8-phase methodology, a multi-host Nmap XML importer with one-click attack graphs, a masked credential & hash vault, a CVSS v3.1 Markdown report generator, and a timed exam simulator (OSCP, CRTO, OSEP, CRTP) with ZIP submission export.
+- **50+ machines rooted across Hack The Box, TryHackMe and picoCTF**, including 2 active-season HTB machines (Reactor & Kobold), plus 30 completed HTB Academy modules.
+- **Active Directory Homelab**: an Active Directory domain with two domain-joined Windows machines, plus a Linux VPN server for remote access to the lab. Used to practise AD attack paths such as Kerberoasting and BloodHound recon.
+- **Cyber Security Implementer Program, ITQ College** (2024 - 2025, 650 hours, Cisco and Fortinet specialization): Cisco IOS XE, FortiGate NGFW (simulated two-site Israel-USA network), Windows Server 2022 AD, LPI Linux Essentials, IBM QRadar SIEM with WinCollect, Splunk SOAR. Completed alongside the final year of IDF service (IDF-funded civilian program).
+- **Currently learning**: HTB Academy CPTS and CWES paths.
+- **3-year IDF military service**: Service Coordinator investigating hundreds of sensitive soldier entitlement cases in SAP, maintaining strict data confidentiality and high accuracy under daily SLAs and CRM workflows.
 
 ---
 
-## >_ Flagship Engineering Projects
+## >_ Featured Projects
 
-### 1. [ZeroBox (ctftracker.com)](https://ctftracker.com) — Open Source CTF Tracker & Penetration Testing Workspace
+### 1. [ZeroBox (ctftracker.com)](https://ctftracker.com): CTF Tracker & Penetration Testing Workspace
 - **Links**: [Live App: ctftracker.com](https://ctftracker.com) · [Open Source Repo: GitHub (0xdnd/ctf-tracker)](https://github.com/0xdnd/ctf-tracker)
-- **Problem**: Fragmented progress tracking across 1,000+ HTB & TryHackMe machines, lack of realistic timed certification practice (OSCP, CPTS, CRTO, OSEP, CRTP), manual port transcription during recon, and friction generating reverse shells and managing evidence/notes across drills.
-- **Architecture**: Designed, built, and launched an offline-first penetration testing workspace (web app and Tauri desktop app) in React and TypeScript. Features a catalog of 1,000+ Hack The Box and TryHackMe machines, 131 reverse shell templates, an 8-phase methodology, multi-host Nmap XML importer with one-click attack graph generation, masked credential & hash evidence vault, CVSS v3.1 Markdown report generator, and a timed exam simulator for OSCP, CPTS, CRTO, OSEP, and CRTP with one-click ZIP submission bundle export.
-- **Impact**: Reached 4,000+ visitors in production at `ctftracker.com` and open source on GitHub (`0xdnd/ctf-tracker`). 100% offline-first execution with zero accounts, zero cloud telemetry, sub-10ms query performance via IndexedDB/LocalStorage, and native desktop builds via Tauri.
-- **Stack**: React, TypeScript, Tauri Desktop, 4,000+ Visitors, IndexedDB / LocalStorage, Obsidian `.canvas`, 1,000+ Machine Catalog, 131 Reverse Shells, 8-Phase Methodology, Nmap XML Importer, CVSS v3.1 Reports, OSCP & CPTS Exam Simulator.
+- **Problem**: Progress across 1,000+ HTB and TryHackMe machines was scattered, there was no realistic timed exam practice, and ports, reverse shells and evidence notes were copied around by hand during recon.
+- **What I built**: An offline-first workspace in React and TypeScript, shipped as a web app and a Tauri desktop app: a 1,000+ machine catalog, 131 reverse shell templates, an 8-phase methodology, a multi-host Nmap XML importer with one-click attack graphs, a masked credential and hash vault, a CVSS v3.1 Markdown report generator, and a timed exam simulator (OSCP, CRTO, OSEP, CRTP and more) with ZIP submission export.
+- **Result**: 4,000+ visitors at `ctftracker.com`, open source on GitHub (`0xdnd/ctf-tracker`). Runs fully offline with no accounts and no cloud telemetry; data stays in the browser (IndexedDB / LocalStorage).
+- **Stack**: React, TypeScript, Tauri Desktop, IndexedDB, Nmap XML, CVSS v3.1.
 
-### 2. Enterprise Active Directory Homelab & Sysmon SIEM Detection
-- **Links**: [GitHub Repository & Detection Rules](https://github.com/0xdnd)
-- **Problem**: Inability to safely observe, replicate, and engineer detection rules against real-world Kerberos ticket abuse, credential dumping, and AD privilege escalation without an enterprise domain forest environment.
-- **Architecture**: Dual-domain Windows Server 2022 forest with SwiftOnSecurity modular Sysmon telemetry (Event IDs 1, 3, 10) ingested into Splunk SIEM via Universal Forwarders. Attack paths mapped with BloodHound and adversary executions simulated via Kali Linux.
-- **Impact**: Engineered and validated 5 production SPL alert rules covering MITRE ATT&CK T1558 (Kerberoasting / AS-REP) and T1003 (OS Credential Dumping), delivering sub-minute offense correlation with zero false positives during normal domain operations.
-- **Stack**: Windows Server 2022, Active Directory Forest, Sysmon (EID 1/3/10), Splunk Enterprise (SPL), BloodHound, Mimikatz & Impacket.
+### 2. Active Directory Homelab
+- **Problem**: Active Directory attack paths like Kerberoasting are hard to understand from reading alone; I wanted a safe environment of my own to practise them hands-on.
+- **What I built**: An Active Directory domain with two domain-joined Windows machines, plus a Linux VPN server for remote access to the lab.
+- **Result**: A working lab where I practise AD attack paths end to end, including Kerberoasting and BloodHound recon.
+- **Stack**: Active Directory, BloodHound, Kerberoasting.
 
 ---
 
-## >_ CTF & Lab Telemetry (50+ Rooted Machines)
+## >_ CTFs & Security Labs
 
 | Metric | Achievement | Scope / Domain |
 | :--- | :--- | :--- |
-| **50+** | Machines Rooted | Hack The Box, TryHackMe & Custom Labs |
-| **2 Active** | Live Season Roots | Reactor & Kobold (Zero Spoilers · Live HTB Targets) |
-| **30+ Modules** | HTB Academy | CPTS & CWES Advanced Offensive and Defensive Tracks |
-| **100%** | Integrity | Documented Detection Notes & Telemetry Audit Trails |
+| **50+** | Machines Rooted | Hack The Box, TryHackMe & picoCTF |
+| **2 Active** | Live Season Roots | Reactor & Kobold (zero spoilers) |
+| **30** | HTB Academy Modules | Active Directory, web exploitation & post-exploitation |
 
-### Verified Root Roster (50+ Machines)
-- **Active Season Solves (HTB)**: 👑 Reactor, 👑 Kobold.
-- **Hack The Box Machines (20)**: TwoMillion, Cap, Broker, Knife, Netmon, Jerry, Nibbles, Bashed, Shocker, Blue, Blocky, Bank, Granny, Grandpa, Optimum, Beep, Devel, Legacy, Lame, Connected.
-- **HTB Starting Point (7)**: Archetype, Responder, Dancing, Redeemer, Crocodile, Markup, Previse.
-- **TryHackMe & Labs (22)**: Pickle Rick, RootMe, Bounty Hacker, Mr Robot CTF, Agent Sudo, Anthem, Simple CTF, Basic Pentesting, Recruit, Lo-Fi, W1seGuy, MD2PDF, TakeOver, Neighbour, Epoch, Corridor, Agent T, CyberHeroes, Intermediate Nmap, Vulnerability Capstone, Investigating Windows, Enterprise Pivot Lab.
+### Featured Machines
 
-Featured attack vectors and detection models:
-- **Active Directory**: AS-REP Roasting, Kerberoasting, DCSync, Pass-the-Hash, GPP cPassword Decryption (Event IDs 4768, 4769, 4624, 4662).
-- **Web Security**: Hydra Brute-Force, LFI/RFI, Second-Order SQLi, SSTI, Fuel CMS RCE (WAF regex, URI traversal alerts, child process auditing).
-- **Privilege Escalation**: Samba 3.0.20 usermap script RCE, Linux SUID capability abuse, unquoted service paths (Sysmon Event ID 1, Linux auditd).
-- **Blue Team / Forensics**: PsExec lateral movement, Registry Run Key persistence, Scheduled Tasks, Rogue DHCP/VLAN hopping (Sysmon EID 1/13, Event 4698, DAI/DHCP Snooping).
+| Target | Platform | Core Attack Vector |
+| :--- | :--- | :--- |
+| **TwoMillion** | Hack The Box | API enumeration → admin via API → command injection in /api/v1/admin/vpn/generate → CVE-2023-0386 OverlayFS kernel privesc |
+| **Blue** | Hack The Box | MS17-010 EternalBlue: SMBv1 (srv.sys) remote code execution → NT AUTHORITY\SYSTEM |
+| **Cap** | Hack The Box | IDOR on PCAP export → plaintext credential sniffing → Python cap_setuid SUID |
+| **Support** | TryHackMe | Pentest of the Support Ops web platform: vulnerability discovery → exploitation → remote code execution |
 
 ---
 
@@ -75,12 +73,10 @@ Featured attack vectors and detection models:
 ![IBM QRadar SIEM](https://img.shields.io/badge/IBM_QRadar_SIEM-0284c7?style=flat-square&logo=ibm&logoColor=white)
 ![WinCollect](https://img.shields.io/badge/WinCollect_Agent-0284c7?style=flat-square)
 ![Splunk SOAR](https://img.shields.io/badge/Splunk_SOAR-0284c7?style=flat-square&logo=splunk&logoColor=white)
-![Splunk Enterprise](https://img.shields.io/badge/Splunk_Enterprise_(SPL)-0284c7?style=flat-square&logo=splunk&logoColor=white)
 ![FortiGate NGFW](https://img.shields.io/badge/FortiGate_NGFW_(Two--Site_Israel--USA)-0284c7?style=flat-square&logo=fortinet&logoColor=white)
 ![Antivirus & Web Filtering](https://img.shields.io/badge/Antivirus_%26_Web_Filtering-0284c7?style=flat-square)
 ![Windows Audit Policy](https://img.shields.io/badge/Windows_Audit_Policy-0284c7?style=flat-square)
 ![Syslog Forwarding](https://img.shields.io/badge/Syslog_Forwarding-0284c7?style=flat-square)
-![Sysmon](https://img.shields.io/badge/Sysmon_(EID_1%2F3%2F10)-0284c7?style=flat-square)
 ![Alert Triage](https://img.shields.io/badge/Alert_Triage-0284c7?style=flat-square)
 ![Log Investigation](https://img.shields.io/badge/Log_Investigation-0284c7?style=flat-square)
 ![Wireshark](https://img.shields.io/badge/Wireshark-0284c7?style=flat-square&logo=wireshark&logoColor=white)
@@ -93,7 +89,6 @@ Featured attack vectors and detection models:
 ![OWASP ZAP](https://img.shields.io/badge/OWASP_ZAP-059669?style=flat-square&logo=owasp&logoColor=white)
 ![OWASP Top 10](https://img.shields.io/badge/OWASP_Top_10-059669?style=flat-square)
 ![BloodHound](https://img.shields.io/badge/BloodHound-059669?style=flat-square)
-![Impacket](https://img.shields.io/badge/Impacket-059669?style=flat-square)
 ![SQLMap](https://img.shields.io/badge/SQLMap-059669?style=flat-square)
 ![Metasploit](https://img.shields.io/badge/Metasploit-059669?style=flat-square&logo=metasploit&logoColor=white)
 ![ffuf](https://img.shields.io/badge/ffuf-059669?style=flat-square)

@@ -146,9 +146,12 @@ html_content = """<!DOCTYPE html>
 
 <div class="header">
   <div class="name">Daniel Dayan</div>
-  <div class="title">SOC Tier 1 Analyst &amp; Penetration Testing Specialist (CPTS Candidate)</div>
+  <div class="title">Junior SOC Analyst &amp; Junior Penetration Tester</div>
+  <div class="contacts" style="margin-bottom:3px;">
+    <span>Central Israel &middot; Available immediately &middot; Hebrew &amp; English</span>
+  </div>
   <div class="contacts">
-    <span>Israel &nbsp;|&nbsp; 054-912-0911</span>
+    <span>054-912-0911</span>
     <span>&bull;</span>
     <span><a href="mailto:danieldayan2512@gmail.com">danieldayan2512@gmail.com</a></span>
     <span>&bull;</span>
@@ -163,93 +166,91 @@ html_content = """<!DOCTYPE html>
 </div>
 
 <div class="section">
-  <div class="section-title">Professional Profile</div>
+  <div class="section-title">Profile</div>
   <p class="summary-text">
-    Adversary-aware cybersecurity practitioner bridging <strong>650 hours of enterprise infrastructure &amp; SOC engineering at ITQ College</strong> with offensive penetration testing tradecraft (<strong>50+ targets rooted</strong> across Hack The Box &amp; TryHackMe, CPTS track in-progress). Hands-on configuring dual-domain Active Directory forests, Sysmon telemetry, and engineering detection rules in both <strong>Splunk (SPL)</strong> and <strong>IBM QRadar</strong>. Creator of <strong>ZeroBox (ctftracker.com)</strong>, an open-source tactical CTF cockpit. Proven operational discipline under strict SLAs and incident escalation from 3 years of military service as an IDF Service Coordinator.
+    Junior SOC analyst and junior penetration tester. Graduate of the <strong>Cyber Security Implementer Program at ITQ College (650 hours, Cisco and Fortinet specialization)</strong>, where I trained on SIEM/SOC tooling (IBM QRadar SIEM, Splunk SOAR), Cisco and Fortinet. In my own Active Directory lab I practise attack paths such as Kerberoasting and BloodHound recon, and I have rooted <strong>50+ machines across Hack The Box, TryHackMe and picoCTF</strong>. Creator of <strong>ZeroBox (ctftracker.com)</strong>, an open-source pentest workspace with 4,000+ visitors. 3 years as an IDF Service Coordinator working under strict SLAs in SAP ERP and CRM ticketing systems.
   </p>
 </div>
 
 <div class="section">
   <div class="section-title">Technical Proficiencies</div>
   <div class="skills-list">
-    <div class="skill-row"><span class="skill-label">SIEM &amp; Detection Engineering:</span> Splunk Enterprise (SPL), IBM QRadar SIEM, Sysmon (EID 1, 3, 10, 13), Windows Security Logs (EID 4624, 4625, 4720, 4769), WinCollect, Wireshark, tcpdump.</div>
-    <div class="skill-row"><span class="skill-label">Enterprise Infrastructure &amp; Defense:</span> Cisco IOS XE (VLANs, OSPF, STP, EtherChannel, ACLs, NAT), Fortinet FortiGate NGFW (Stateful Policies, IPsec VPN, WIPS), Active Directory (GPOs, Domain Trees, Kerberos, DNS/DHCP), Linux (Kali, Ubuntu).</div>
-    <div class="skill-row"><span class="skill-label">Offensive Security &amp; Exploitation:</span> 50+ Rooted Machines (HTB &amp; THM), 2 Active Live Season Roots (Reactor &amp; Kobold), AD Attacks (Kerberoasting, AS-REP Roasting, BloodHound / SharpHound), Nmap, Burp Suite, ffuf, Metasploit, Hashcat, Hydra, OWASP Top 10.</div>
-    <div class="skill-row"><span class="skill-label">Scripting, Tools &amp; Operations:</span> Python 3, Bash, PowerShell, Regular Expressions (RegEx), Git/GitHub, SAP ERP, CRM Incident Ticketing.</div>
-    <div class="skill-row"><span class="skill-label">Languages:</span> Hebrew (Native), English (Full Technical &amp; Operational Proficiency).</div>
+    <div class="skill-row"><span class="skill-label">Defensive Security &amp; SOC:</span> IBM QRadar SIEM, WinCollect Agent, Splunk SOAR, FortiGate NGFW, Antivirus &amp; Web Filtering, Windows Audit Policies, Syslog Forwarding, Alert Triage &amp; Containment, Wireshark, MITRE ATT&amp;CK Mapping.</div>
+    <div class="skill-row"><span class="skill-label">Networking &amp; Systems:</span> Cisco IOS XE (VLANs, 802.1Q, OSPF, RIPv2, HSRP, GRE &amp; IPsec VPNs, ACLs, NAT, Port Security), Windows Server 2022 (AD / GPO), DNS / DHCP, LPI Linux Essentials, Kali &amp; Ubuntu (tcpdump, SSH, Netplan), VMware.</div>
+    <div class="skill-row"><span class="skill-label">Offensive Security &amp; Pentesting:</span> Nmap, Burp Suite, OWASP ZAP, OWASP Top 10, ffuf, SQLMap, Metasploit, Hydra, Hashcat, Privilege Escalation, Kerberoasting, BloodHound, CVSS v3.1.</div>
+    <div class="skill-row"><span class="skill-label">Scripting &amp; Operations:</span> React, TypeScript, Python, Bash, PowerShell, SQL, Git, SAP ERP Workflows, CRM Ticket Triage.</div>
   </div>
 </div>
 
 <div class="section">
-  <div class="section-title">Flagship Security Implementations &amp; Homelab</div>
-  
+  <div class="section-title">Projects &amp; Homelab</div>
+
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title"><a href="https://ctftracker.com" target="_blank">ZeroBox (ctftracker.com)</a> &mdash; Open Source CTF Cockpit &amp; Exam Simulator</span>
-      <span class="entry-dates">2025 &ndash; Present</span>
+      <span class="entry-title"><a href="https://ctftracker.com" target="_blank">ZeroBox (ctftracker.com)</a> &mdash; CTF Tracker &amp; Penetration Testing Workspace</span>
+      <span class="entry-dates">Open Source</span>
     </div>
-    <div class="entry-role">Creator &amp; Lead Architect | Open Source (<a href="https://github.com/0xdnd/ctf-tracker" target="_blank">github.com/0xdnd/ctf-tracker</a>)</div>
+    <div class="entry-role">Creator | 4,000+ visitors | <a href="https://github.com/0xdnd/ctf-tracker" target="_blank">github.com/0xdnd/ctf-tracker</a></div>
     <ul class="bullets">
-      <li>Architected and shipped an offline-first tactical cyber cockpit indexing <strong>1,090+ CTF machines</strong> and <strong>131+ reverse shell vectors</strong> with dynamic parameter injection.</li>
-      <li>Engineered 100% client-side data isolation utilizing browser IndexedDB &amp; LocalStorage, achieving <strong>sub-10ms catalog querying</strong> with zero cloud accounts or external telemetry.</li>
-      <li>Built 5 timed 24-hour certification exam tracks (OSCP, CPTS, CRTO, OSEP, CRTP), interactive pivot/attack graphing with Obsidian <code>.canvas</code> export, and native desktop builds via Tauri.</li>
+      <li>Offline-first workspace in React and TypeScript, shipped as a web app and a Tauri desktop app: a <strong>1,000+ machine catalog</strong>, <strong>131 reverse shell templates</strong> and an 8-phase methodology.</li>
+      <li>Multi-host Nmap XML importer with one-click attack graphs, a masked credential and hash vault, and a CVSS v3.1 Markdown report generator.</li>
+      <li>Timed exam simulator (OSCP, CRTO, OSEP, CRTP) with ZIP submission export. Runs fully offline with no accounts and no cloud telemetry; data stays in the browser (IndexedDB / LocalStorage).</li>
     </ul>
   </div>
 
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title">Enterprise Active Directory Homelab &amp; Sysmon Detection</span>
-      <span class="entry-dates">2025</span>
+      <span class="entry-title">Active Directory Homelab</span>
+      <span class="entry-dates">Personal Lab</span>
     </div>
-    <div class="entry-role">Security Architect &amp; Detection Engineer</div>
     <ul class="bullets">
-      <li>Deployed a dual-domain Windows Server 2022 Active Directory forest with dedicated Windows 10 endpoints, Kali Linux attack node, and Splunk SIEM via Universal Forwarders.</li>
-      <li>Implemented SwiftOnSecurity modular Sysmon telemetry auditing process creation (EID 1), network connections (EID 3), and LSASS memory access (EID 10).</li>
-      <li>Engineered 5 production-grade Splunk SPL correlation rules detecting Kerberoasting (EID 4769 with RC4 encryption <code>0x17</code>), AS-REP roasting, and PsExec lateral movement with zero false positives.</li>
+      <li>Built an Active Directory domain with <strong>two domain-joined Windows machines</strong>, plus a <strong>Linux VPN server</strong> for remote access to the lab.</li>
+      <li>Practise AD attack paths end to end, including <strong>Kerberoasting</strong> and <strong>BloodHound recon</strong>.</li>
     </ul>
   </div>
 </div>
 
 <div class="section">
-  <div class="section-title">Practical Training &amp; Offensive Security</div>
+  <div class="section-title">Training &amp; Offensive Practice</div>
 
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title">ITQ College &mdash; Cyber &amp; Information Security Specialist</span>
+      <span class="entry-title">Cyber Security Implementer Program, ITQ College</span>
       <span class="entry-dates">2024 &ndash; 2025</span>
     </div>
-    <div class="entry-role">650 Hands-on Training Hours | Cisco &amp; Fortinet Specialization</div>
+    <div class="entry-role">650 hours | Cisco &amp; Fortinet Specialization | Completed alongside the final year of IDF service (IDF-funded civilian program)</div>
     <ul class="bullets">
-      <li>Completed 650 hours of enterprise infrastructure &amp; defense training: Cisco IOS XE routing &amp; switching, Fortinet FortiGate NGFW configuration, and Linux system administration.</li>
-      <li>Hardened Windows Server 2022 Active Directory domains via Group Policy Objects (GPOs), remote access, and service account isolation.</li>
-      <li>Practiced Tier-1 SOC alert triage and incident correlation in IBM QRadar SIEM, configuring WinCollect log forwarding and FortiGate firewall syslog integration.</li>
+      <li><strong>Cisco IOS XE</strong> routers &amp; switches: VLANs and 802.1Q trunking, inter-VLAN routing, DHCP, OSPF, RIPv2, HSRP, ACLs, port security, NAT, and GRE and IPsec VPN tunnels.</li>
+      <li><strong>FortiGate NGFW</strong>: configured for a simulated two-site enterprise network (Israel and USA): firewall policies, Virtual IPs (static NAT), antivirus and web filtering profiles, and a site-to-site IPsec VPN.</li>
+      <li><strong>Windows Server 2022 &amp; Linux</strong>: Active Directory, Group Policy (GPO), NTFS permissions, DHCP with MAC filtering; studied LPI Linux Essentials and administered Kali and Ubuntu.</li>
+      <li><strong>IBM QRadar SIEM &amp; Splunk SOAR</strong>: configured QRadar SIEM with the WinCollect agent, Windows audit policies, and syslog forwarding through the FortiGate, and set up Splunk SOAR.</li>
     </ul>
   </div>
 
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title">Hack The Box Academy &amp; Continuous CTF Validation</span>
-      <span class="entry-dates">2025 &ndash; Present</span>
+      <span class="entry-title">CTFs &amp; Hack The Box Academy</span>
+      <span class="entry-dates">Ongoing</span>
     </div>
-    <div class="entry-role">Offensive Tradecraft &amp; Validation (50+ Rooted Targets)</div>
     <ul class="bullets">
-      <li>Compromised <strong>50+ standalone targets</strong> across Hack The Box and TryHackMe, including <strong>2 active live-season HTB roots</strong> (<code>Reactor</code> &amp; <code>Kobold</code>) and the complete HTB Starting Point tier.</li>
-      <li>Actively pursuing <strong>Certified Penetration Testing Specialist (CPTS)</strong> and <strong>CWES</strong> tracks, completing 30+ enterprise modules (PrivEsc, Web Proxies, Broken Auth, Footprinting).</li>
+      <li><strong>50+ machines rooted</strong> across Hack The Box, TryHackMe and picoCTF, including <strong>2 active-season HTB machines</strong> (Reactor &amp; Kobold); <strong>30 HTB Academy modules</strong> completed (AD, web exploitation &amp; post-exploitation).</li>
+      <li><strong>TwoMillion</strong> (HTB): API enumeration, admin via API, command injection in the VPN generator, CVE-2023-0386 OverlayFS kernel privesc. <strong>Blue</strong> (HTB): MS17-010 EternalBlue, SMBv1 (srv.sys) RCE to SYSTEM.</li>
+      <li><strong>Cap</strong> (HTB): IDOR on PCAP export, plaintext credential sniffing, Python cap_setuid privesc. <strong>Support</strong> (TryHackMe): web app pentest from vulnerability discovery to remote code execution.</li>
+      <li>Currently learning: HTB Academy CPTS and CWES paths.</li>
     </ul>
   </div>
 </div>
 
 <div class="section">
-  <div class="section-title">Operational Military Service</div>
+  <div class="section-title">Military Service</div>
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title">Service Coordinator &mdash; Soldier Benefits | Israel Defense Forces (IDF)</span>
+      <span class="entry-title">Service Coordinator, Soldier Benefits &mdash; Israel Defense Forces (IDF)</span>
       <span class="entry-dates">2022 &ndash; 2025 (3 Years)</span>
     </div>
     <ul class="bullets">
-      <li>Managed high-volume, sensitive operational requests and entitlements under strict SLAs, confidentiality, and time pressure.</li>
-      <li>Executed structured database queries and record processing in SAP ERP; prioritized, documented, and tracked incident lifecycles in CRM ticketing systems.</li>
-      <li>Maintained high-urgency stakeholder escalation and cross-functional communication protocols with military commanders and external agencies.</li>
+      <li>Investigated and resolved hundreds of sensitive soldier entitlement cases in SAP, maintaining strict data confidentiality and high accuracy under daily SLAs.</li>
+      <li>Prioritized and tracked complex escalations through CRM and ticketing workflows, writing clear case notes that sped up coordination between soldiers, commanders and external agencies.</li>
     </ul>
   </div>
 </div>
@@ -258,11 +259,11 @@ html_content = """<!DOCTYPE html>
   <div class="section-title">Education</div>
   <div class="entry">
     <div class="entry-header">
-      <span class="entry-title">Computer Science Specialization (10 Units) &mdash; High School Diploma</span>
+      <span class="entry-title">High School Diploma, Computer Science Major (10 Units)</span>
       <span class="entry-dates">2020 &ndash; 2022</span>
     </div>
     <p class="summary-text" style="margin-top:1.5px; font-size:8.1pt;">
-      Graduation Project: Developed an Android mobile application in Java for real-time cryptocurrency valuation tracking and currency conversion via REST API integration.
+      Final graduation project: native Android app in Java for real-time cryptocurrency prices and currency conversion (USD/EUR/ILS); web development with HTML and CSS.
     </p>
   </div>
 </div>
@@ -276,18 +277,17 @@ async def generate():
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(viewport={'width': 794, 'height': 1123})
         await page.set_content(html_content)
-        await page.screenshot(path='resume_preview.png', full_page=True)
         pdf_bytes = await page.pdf(
             format='A4',
             print_background=True,
             margin={'top': '8mm', 'bottom': '8mm', 'left': '12mm', 'right': '12mm'}
         )
-        with open('resume_new.pdf', 'wb') as f:
+        with open('resume.pdf', 'wb') as f:
             f.write(pdf_bytes)
         await browser.close()
 
 asyncio.run(generate())
 
-reader = pypdf.PdfReader('resume_new.pdf')
+reader = pypdf.PdfReader('resume.pdf')
 print(f'NEW RESUME COMPILED! Total pages: {len(reader.pages)}')
 

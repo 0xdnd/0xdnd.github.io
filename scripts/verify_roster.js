@@ -3,7 +3,7 @@ const fs = require('fs');
 const html = fs.readFileSync('index.html', 'utf8');
 
 const tableRows = (html.match(/<tr data-category=/g) || []).length;
-const activeTableRows = (html.match(/<tr data-category="active/g) || []).length;
+const hasActiveLine = html.includes('2 Active') && html.includes('Reactor &amp; Kobold');
 const projectCards = (html.match(/class="project-card[^"]*"/g) || []).length;
 const topPercent = (html.match(/Top\s+(5|10)%/gi) || []).length;
 const rosterCards = (html.match(/class="roster-card"/g) || []).length;
@@ -14,7 +14,7 @@ const hasSplitHours = /\(\d+h\)/i.test(html) || /\d+h\s+lecture/i.test(html);
 
 const hasWriteupsSection = html.includes('id="writeups"');
 const writeupAnchorsCount = (html.match(/href="#writeups"/g) || []).length;
-const hasSecureComms06 = html.includes('06 // Secure Comms');
+const hasContact06 = html.includes('06 // Contact');
 const readmeHasWriteups = fs.readFileSync('README.md', 'utf8').includes('#writeups');
 
 const hasIsraelMoD = html.includes('Israel Ministry of Defense');
@@ -24,7 +24,7 @@ const hasCyberSecurityImplementer = html.includes('Cyber Security Implementer');
 
 console.log('--- CURATED VERIFICATION AUDIT ---');
 console.log(`Curated Table Rows: ${tableRows}`);
-console.log(`Active Live Season Rows in Table: ${activeTableRows}`);
+console.log(`2 Active stat card present: ${hasActiveLine} (Must be true)`);
 console.log(`Featured Project Cards: ${projectCards}`);
 console.log(`Purged Roster Cards Count: ${rosterCards} (Must be 0)`);
 console.log(`Gamified Top 5%/10% Rankings: ${topPercent} (Must be 0)`);
@@ -34,7 +34,7 @@ console.log(`50+ Solved Metric Present: ${has50Plus}`);
 console.log(`Active Stat Card Present: ${hasActiveStat}`);
 console.log(`Writeups Section Present: ${hasWriteupsSection} (Must be false)`);
 console.log(`Writeup Anchors Count: ${writeupAnchorsCount} (Must be 0)`);
-console.log(`06 // Secure Comms Label Present: ${hasSecureComms06} (Must be true)`);
+console.log(`06 // Contact Label Present: ${hasContact06} (Must be true)`);
 console.log(`README.md Contains #writeups: ${readmeHasWriteups} (Must be false)`);
 console.log(`Contains "Israel Ministry of Defense": ${hasIsraelMoD} (Must be false)`);
 console.log(`Contains "\\bMoD\\b": ${hasMoDWord} (Must be false)`);
@@ -57,12 +57,12 @@ if (hasSplitHours) {
   console.error('FAIL: Found split hours.');
   process.exit(1);
 }
-if (tableRows !== 8) {
-  console.error(`FAIL: Expected 8 curated table rows, got ${tableRows}.`);
+if (tableRows !== 4) {
+  console.error(`FAIL: Expected 4 curated table rows, got ${tableRows}.`);
   process.exit(1);
 }
-if (activeTableRows !== 2) {
-  console.error(`FAIL: Expected 2 active season machines in table, got ${activeTableRows}.`);
+if (!hasActiveLine) {
+  console.error('FAIL: Missing "2 Active" stat card in index.html.');
   process.exit(1);
 }
 if (rosterCards !== 0) {
@@ -77,8 +77,8 @@ if (writeupAnchorsCount !== 0) {
   console.error(`FAIL: Found ${writeupAnchorsCount} anchors pointing to #writeups.`);
   process.exit(1);
 }
-if (!hasSecureComms06) {
-  console.error('FAIL: Missing "06 // Secure Comms" in index.html.');
+if (!hasContact06) {
+  console.error('FAIL: Missing "06 // Contact" in index.html.');
   process.exit(1);
 }
 if (readmeHasWriteups) {
