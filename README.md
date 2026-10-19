@@ -5,7 +5,6 @@
 **Junior SOC Analyst · Threat Detection & Security Operations**
 
 [![Live Site](https://img.shields.io/badge/Live_Site-0xdnd.github.io-00e58d?style=for-the-badge&logo=googlechrome&logoColor=black)](https://0xdnd.github.io)
-[![HTB Academy](https://img.shields.io/badge/HTB_Academy-Top_5%25-38bdf8?style=for-the-badge&logo=hackthebox&logoColor=white)](https://0xdnd.github.io)
 
 </div>
 
@@ -15,7 +14,7 @@
 
 Cybersecurity specialist combining hands-on offensive awareness with disciplined blue-team defense.
 - **650-hour hands-on infrastructure training** sponsored by the Israel Ministry of Defense (Cisco & Fortinet specialization).
-- **Top 5% Hack The Box Academy** global practitioner.
+- Preparing for **HTB CPTS**, **HTB CWES**, **eJPT** and **CompTIA Security+**.
 - **3-year IDF military service** with extensive experience in operational case management, SAP ERP, CRM ticketing, and triage under pressure.
 - Hands-on across enterprise networking, Active Directory (Windows Server 2022), FortiGate NGFW, and SOC workflows — alert triage, log investigation, and incident response with Splunk and IBM QRadar.
 
