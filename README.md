@@ -14,7 +14,7 @@
 
 Cybersecurity specialist combining hands-on offensive awareness with disciplined blue-team defense.
 - **650-hour hands-on infrastructure training** sponsored by the Israel Ministry of Defense (Cisco & Fortinet specialization).
-- Preparing for **HTB CPTS**, **HTB CWES**, **eJPT** and **CompTIA Security+**.
+- Preparing for **HTB CPTS**, **HTB CWES** and **eJPT**.
 - **3-year IDF military service** with extensive experience in operational case management, SAP ERP, CRM ticketing, and triage under pressure.
 - Hands-on across enterprise networking, Active Directory (Windows Server 2022), FortiGate NGFW, and SOC workflows — alert triage, log investigation, and incident response with Splunk and IBM QRadar.
 
