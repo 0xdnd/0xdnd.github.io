@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Daniel Dayan — Junior SOC Analyst & Defensive Security Engineer. 650-hour Cisco & Fortinet program, hands-on SIEM with Splunk & QRadar, Active Directory home lab, and CTF write-ups.">
+<meta name="description" content="Daniel Dayan — Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (4,000+ visitors), 650 hours in ITQ's Cyber Security Implementer program (Cisco, Fortinet, IBM QRadar SIEM, Splunk SOAR), Active Directory lab, and 50+ CTF machine roots.">
 <meta name="theme-color" content="#09090b" id="metaThemeColor">
 <meta name="color-scheme" content="dark light">
 
 <!-- Open Graph / Social Cards -->
-<meta property="og:title" content="Daniel Dayan — Junior SOC Analyst & Security Portfolio">
-<meta property="og:description" content="650-hour Cisco & Fortinet cybersecurity bootcamp, Splunk & QRadar SOC workflows, enterprise home lab, and verified CTF write-ups.">
+<meta property="og:title" content="Daniel Dayan — Junior SOC Analyst &amp; Junior Penetration Tester">
+<meta property="og:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (4,000+ visitors), 650-hour ITQ Cyber Security Implementer program, Active Directory homelab, and 50+ rooted CTF machines.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://0xdnd.github.io/">
 <meta property="og:image" content="https://0xdnd.github.io/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Daniel Dayan — Junior SOC Analyst">
-<meta name="twitter:description" content="Defensive security, enterprise infrastructure, and hands-on lab write-ups.">
+<meta name="twitter:title" content="Daniel Dayan — Junior SOC Analyst &amp; Junior Penetration Tester">
+<meta name="twitter:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (4,000+ visitors), enterprise infrastructure, and hands-on offensive & defensive lab validations.">
 <link rel="canonical" href="https://0xdnd.github.io/">
 
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2309090b'/><text x='32' y='42' font-family='monospace' font-size='32' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>%3E_</text></svg>">
 
-<title>Daniel Dayan — Junior SOC Analyst &amp; Security Engineer</title>
+<title>Daniel Dayan — Junior SOC Analyst &amp; Junior Penetration Tester</title>
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
@@ -30,14 +30,14 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Daniel Dayan",
-  "jobTitle": "Junior SOC Analyst",
-  "description": "Cybersecurity graduate of a 650-hour Cisco & Fortinet program (Israel MoD), hands-on with Splunk, IBM QRadar, FortiGate NGFW, Active Directory and home lab investigations.",
+  "jobTitle": "Junior SOC Analyst & Junior Penetration Tester",
+  "description": "Junior SOC Analyst & Junior Penetration Tester. Creator of ZeroBox (ctftracker.com) reaching 4,000+ visitors, graduate of ITQ's 650-hour Cyber Security Implementer program (Cisco, Fortinet, IBM QRadar SIEM, Splunk SOAR), enterprise Active Directory homelab and 50+ HTB machine roots.",
   "url": "https://0xdnd.github.io/",
   "sameAs": [
     "https://www.linkedin.com/in/daniel-dayan-a66322352/",
     "https://github.com/0xdnd"
   ],
-  "knowsAbout": ["SOC Operations", "Splunk", "IBM QRadar", "Incident Response", "Network Security", "FortiGate", "Active Directory", "Python"]
+  "knowsAbout": ["SOC Operations", "Splunk SOAR", "IBM QRadar SIEM", "Incident Response", "Network Security", "FortiGate NGFW", "Active Directory", "Penetration Testing", "React", "TypeScript", "Python"]
 }
 </script>
 
@@ -383,6 +383,8 @@ header.site-header {
   font-weight: 500;
   border-radius: var(--radius-sm);
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: transform 0.2s var(--ease-smooth-out), 
               background-color 0.2s var(--ease-smooth-out), 
               border-color 0.2s, 
@@ -418,6 +420,8 @@ header.site-header {
 .btn-sm {
   padding: 0.4rem 0.85rem;
   font-size: 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .status-pill {
@@ -815,10 +819,209 @@ header.site-header {
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   margin-top: auto;
+}
+
+.project-card.featured-flagship {
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.03) 0%, var(--bg-card) 100%);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.675rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+.status-badge.live {
+  background: var(--status-emerald-bg);
+  color: var(--status-emerald);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.status-badge.active {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot { animation: none; }
+}
+
+/* CTF Telemetry Grid */
+.ctf-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.telemetry-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.2s var(--ease-smooth-out), transform 0.2s var(--ease-smooth-out), box-shadow 0.2s;
+}
+
+.telemetry-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.telemetry-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.telemetry-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.725rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.telemetry-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-top: 0.15rem;
+}
+
+/* CTF Category Filter Tabs & Search Controls */
+.ctf-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.ctf-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ctf-filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.775rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth-out);
+  white-space: nowrap;
+}
+
+.ctf-filter-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.ctf-filter-btn.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ctf-search-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.775rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-xs);
+  outline: none;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color 0.2s var(--ease-smooth-out);
+}
+.ctf-search-input:focus {
+  border-color: var(--accent);
+}
+.ctf-search-input::placeholder {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+/* Hero Stats Row & Interactive Stat Pills */
+.hero-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.hero-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth-out);
+}
+
+.hero-stat-badge:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-stat-badge strong {
+  color: var(--text-primary);
 }
 
 /* ==========================================================================
@@ -922,13 +1125,58 @@ header.site-header {
   font-weight: 600;
   font-family: 'JetBrains Mono', monospace;
 }
+.badge-tag.easy {
+  background: var(--status-emerald-bg);
+  color: var(--status-emerald);
+}
 .badge-tag.med {
   background: var(--status-amber-bg);
   color: var(--status-amber);
 }
+.badge-tag.hard {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
 .badge-tag.info {
   background: var(--accent-subtle);
   color: var(--accent);
+}
+
+.cat-chip {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.12rem 0.4rem;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+}
+.cat-chip.ad {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.cat-chip.web {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.cat-chip.privesc {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.cat-chip.blue {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.cat-chip.sp {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 /* ==========================================================================
@@ -1021,66 +1269,6 @@ header.site-header {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   Blog / Write-ups Section
-   ========================================================================== */
-.blog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.blog-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1.35rem 1.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  transition: transform 0.2s var(--ease-smooth-out), border-color 0.2s, background-color 0.2s;
-  gap: 1.5rem;
-}
-.blog-card:hover {
-  border-color: var(--border-hover);
-  background-color: var(--bg-card-hover);
-  transform: translateX(4px);
-}
-
-.blog-main h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: var(--text-primary);
-}
-
-.blog-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  flex-wrap: wrap;
-}
-
-.blog-read-time {
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.blog-arrow {
-  color: var(--text-tertiary);
-  transition: transform 0.2s, color 0.2s;
-}
-.blog-card:hover .blog-arrow {
-  color: var(--accent);
-  transform: translateX(3px);
-}
-
-@media (max-width: 600px) {
-  .blog-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-  .blog-arrow { display: none; }
-}
 
 /* ==========================================================================
    Contact & PGP Key Block
@@ -1308,7 +1496,6 @@ footer a:hover {
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#ctf" class="nav-link">CTFs &amp; Labs</a></li>
         <li><a href="#certs" class="nav-link">Certs</a></li>
-        <li><a href="#writeups" class="nav-link">Write-ups</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -1351,16 +1538,39 @@ footer a:hover {
         <div class="hero-content">
           <div class="status-pill">
             <span class="status-dot"></span>
-            <span>AVAILABLE FOR SOC ANALYST ROLES &amp; INTERNSHIPS</span>
+            <span>AVAILABLE FOR JUNIOR SOC ANALYST &amp; PENTESTING ROLES</span>
           </div>
           
           <h1 id="hero-title">Defender by training.<br><span style="color:var(--text-tertiary)">Breaker by curiosity.</span></h1>
           
           <p class="hero-tagline">
-            Junior SOC Analyst &amp; Threat Detection Engineer. 650 hours of intensive Cisco &amp; Fortinet training, hands-on SIEM triage with Splunk &amp; IBM QRadar, enterprise Active Directory labbing, and verified adversary write-ups.
+            Junior SOC Analyst &amp; Junior Penetration Tester. Creator of <a href="https://ctftracker.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;"><strong style="color:var(--text-primary)">ZeroBox (ctftracker.com)</strong></a> — an open-source penetration testing workspace in React &amp; TypeScript reaching 4,000+ visitors, with 50+ Hack The Box machines rooted (2 active), enterprise Active Directory homelab with FortiGate &amp; Splunk, and 650 hours of intensive training in ITQ's Cyber Security Implementer program (Cisco, Fortinet, IBM QRadar SIEM, Splunk SOAR).
           </p>
+
+          <div class="hero-stats-row" role="region" aria-label="Key highlights">
+            <a href="https://ctftracker.com" target="_blank" rel="noopener noreferrer" class="hero-stat-badge" title="Launch ctftracker.com live platform">
+              <span class="status-badge live" style="padding:0.12rem 0.45rem; font-size:0.65rem;"><span class="pulse-dot"></span> 4,000+ VISITORS</span>
+              <span><strong>ctftracker.com</strong> ↗</span>
+            </a>
+            <a href="https://github.com/0xdnd/ctf-tracker" target="_blank" rel="noopener noreferrer" class="hero-stat-badge" title="View open-source GitHub repository">
+              <span class="status-badge active" style="padding:0.12rem 0.45rem; font-size:0.65rem;">OPEN SOURCE</span>
+              <span><strong>GitHub</strong> 0xdnd/ctf-tracker ↗</span>
+            </a>
+            <a href="#ctf" class="hero-stat-badge" title="Jump to 50+ CTFs Solved">
+              <span style="color:var(--accent)">★</span>
+              <span><strong>50+</strong> CTFs Rooted</span>
+            </a>
+            <a href="#projects" class="hero-stat-badge" title="Jump to Active Directory Homelab">
+              <span class="status-badge active" style="padding:0.12rem 0.45rem; font-size:0.65rem;"><span class="pulse-dot"></span> LAB</span>
+              <span><strong>AD 2022</strong> Sysmon &amp; Splunk</span>
+            </a>
+            <a href="#ctf" class="hero-stat-badge" title="View CPTS and CWES preparation track">
+              <span style="color:#38bdf8">⚡</span>
+              <span><strong>CPTS &amp; CWES</strong> Candidate</span>
+            </a>
+          </div>
           
-          <div class="hero-actions">
+          <div class="hero-actions" style="margin-top:1.5rem;">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Download Resume ↓</a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -1380,11 +1590,11 @@ footer a:hover {
           </div>
           <div class="terminal-body mono" id="terminalOutput">
             <div class="term-line"><span class="term-prompt">&gt;</span> whoami</div>
-            <div class="term-line" style="color:var(--text-secondary)">daniel_dayan · Junior SOC Analyst</div>
-            <div class="term-line" style="margin-top:0.4rem"><span class="term-prompt">&gt;</span> cat focus.json</div>
-            <div class="term-line" style="color:#38bdf8">{ "track": "SOC T1/T2", "siem": ["Splunk", "QRadar"], "lab": "Active Directory" }</div>
+            <div class="term-line" style="color:var(--text-secondary)">daniel_dayan · Junior SOC Analyst &amp; Junior Penetration Tester (CPTS &amp; CWES Candidate)</div>
+            <div class="term-line" style="margin-top:0.4rem"><span class="term-prompt">&gt;</span> cat credentials.json</div>
+            <div class="term-line" style="color:var(--accent)">{ "tool": "ZeroBox (ctftracker.com)", "traction": "4,000+ visitors", "source": "open-source (0xdnd/ctf-tracker)", "ctfs_solved": "50+", "training": "ITQ Cyber Security Implementer (650 Hours)" }</div>
             <div class="term-line" style="margin-top:0.4rem"><span class="term-prompt">&gt;</span> soc-status --active</div>
-            <div class="term-line" style="color:#10b981">[READY] Ingesting logs · Triage playbooks loaded <span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line" style="color:var(--status-emerald)">[READY] Ingesting logs · Triage playbooks loaded · 50+ Root Proofs Verified <span class="term-cursor" aria-hidden="true"></span></div>
           </div>
         </div>
       </div>
@@ -1401,20 +1611,20 @@ footer a:hover {
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I am a cybersecurity graduate of a rigorous <strong>650-hour program sponsored by the Israel Ministry of Defense</strong>, specializing in Cisco Enterprise Networking and Fortinet security technologies. My engineering philosophy revolves around deep hands-on replication: I build attack paths in my home lab to understand exactly how to engineer resilient detections in the SIEM.
+            I am a cybersecurity graduate of the rigorous <strong>Cyber Security Implementer Program at ITQ College (650 hours, Cisco and Fortinet specialization)</strong>, focusing on enterprise network infrastructure, Microsoft servers, firewalls, and SIEM/SOC operations. My engineering philosophy bridges offensive penetration testing with defensive operations: I build and exploit attack paths (Active Directory, Kerberoasting, Web vulnerabilities) to understand exactly how adversaries operate, allowing me to engineer resilient detections in SIEM environments (Splunk SPL, IBM QRadar SIEM, Splunk SOAR).
           </p>
           <p>
-            Prior to my cybersecurity training, I served as a <strong>Service Coordinator in the Israel Defense Forces (IDF)</strong> for 3 years. Operating under strict SLAs with SAP ERP and CRM ticketing systems, I developed high-pressure incident triage habits, clear technical documentation, and stakeholder escalation rigor.
+            Prior to my cybersecurity training, I served as a <strong>Service Coordinator in the Israel Defense Forces (IDF)</strong> for 3 years. Operating under strict SLAs with SAP ERP and CRM ticketing systems, I investigated hundreds of sensitive soldier entitlement cases, maintaining data confidentiality and triage rigor under daily pressure.
           </p>
           <p>
-            I combine enterprise infrastructure knowledge (TCP/IP routing, Windows Server AD, Kerberos, FortiGate NGFW) with active SIEM alert investigation (Splunk SPL, IBM QRadar AQL) and offensive replication techniques.
+            I combine enterprise infrastructure knowledge (Cisco IOS XE, FortiGate NGFW, Windows Server 2022 AD, LPI Linux Essentials) with active SIEM alert investigation (IBM QRadar SIEM with WinCollect, Splunk SOAR) and offensive replication techniques.
           </p>
         </div>
 
         <div class="quick-facts">
           <div class="fact-card">
             <h4>Formal Training</h4>
-            <p><strong>ITQ Cyber Bootcamp (650h)</strong>: Cisco (200h), TCP/IP (125h), Linux (125h), Active Directory (100h), FortiGate NGFW (100h).</p>
+            <p><strong>Cyber Security Implementer Program, ITQ (650 Hours)</strong>: Cisco and Fortinet specialization — Cisco IOS XE, FortiGate NGFW (simulated two-site Israel-USA network), Windows Server 2022 AD, LPI Linux Essentials, IBM QRadar SIEM with WinCollect, and Splunk SOAR.</p>
           </div>
           <div class="fact-card">
             <h4>Operational Experience</h4>
@@ -1422,7 +1632,7 @@ footer a:hover {
           </div>
           <div class="fact-card">
             <h4>Currently Exploring</h4>
-            <p><strong>HTB Certified SOC Analyst</strong>, Splunk Boss of the SOC (BOTS) datasets, and Python automation for log enrichment.</p>
+            <p><strong>HTB CPTS &amp; CWES Tracks</strong>, 30 completed HTB Academy modules, and Python automation for log enrichment.</p>
           </div>
         </div>
       </div>
@@ -1448,18 +1658,23 @@ footer a:hover {
                 <line x1="6" y1="18" x2="6.01" y2="18"></line>
               </svg>
             </div>
-            <h3>Networking &amp; Infra</h3>
+            <h3>Networking &amp; Systems</h3>
           </div>
           <div class="tags-wrap">
-            <span class="skill-tag">TCP/IP</span>
-            <span class="skill-tag">VLANs &amp; Trunking</span>
-            <span class="skill-tag">OSPF Routing</span>
-            <span class="skill-tag">IPsec VPN</span>
             <span class="skill-tag">Cisco IOS XE</span>
-            <span class="skill-tag">Windows Server 2022</span>
-            <span class="skill-tag">Active Directory (GPO)</span>
+            <span class="skill-tag">802.1Q Trunking</span>
+            <span class="skill-tag">VLANs</span>
+            <span class="skill-tag">OSPF Routing</span>
+            <span class="skill-tag">RIPv2</span>
+            <span class="skill-tag">HSRP</span>
+            <span class="skill-tag">GRE &amp; IPsec VPNs</span>
+            <span class="skill-tag">ACLs &amp; NAT</span>
+            <span class="skill-tag">Port Security</span>
+            <span class="skill-tag">Windows Server 2022 (AD / GPO)</span>
+            <span class="skill-tag">LPI Linux Essentials</span>
+            <span class="skill-tag">Kali &amp; Ubuntu (tcpdump, SSH, Netplan)</span>
+            <span class="skill-tag">VMware</span>
             <span class="skill-tag">DNS / DHCP</span>
-            <span class="skill-tag">Linux (Ubuntu/Kali)</span>
           </div>
         </article>
 
@@ -1474,18 +1689,22 @@ footer a:hover {
             <h3>Defensive Security &amp; SOC</h3>
           </div>
           <div class="tags-wrap">
+            <span class="skill-tag">IBM QRadar SIEM</span>
+            <span class="skill-tag">WinCollect Agent</span>
+            <span class="skill-tag">Splunk SOAR</span>
             <span class="skill-tag">Splunk Enterprise (SPL)</span>
-            <span class="skill-tag">IBM QRadar SIEM (AQL)</span>
-            <span class="skill-tag">Alert Triage &amp; Containment</span>
-            <span class="skill-tag">FortiGate NGFW</span>
+            <span class="skill-tag">FortiGate NGFW (Two-Site Israel-USA)</span>
+            <span class="skill-tag">Antivirus &amp; Web Filtering</span>
+            <span class="skill-tag">Windows Audit Policies</span>
+            <span class="skill-tag">Syslog Forwarding</span>
             <span class="skill-tag">Sysmon Telemetry</span>
+            <span class="skill-tag">Alert Triage &amp; Containment</span>
             <span class="skill-tag">Wireshark Packet Analysis</span>
             <span class="skill-tag">MITRE ATT&amp;CK Mapping</span>
-            <span class="skill-tag">Incident Playbooks</span>
           </div>
         </article>
 
-        <!-- Offensive Security & Validation -->
+        <!-- Offensive Security & Pentesting -->
         <article class="skill-category">
           <div class="category-header">
             <div class="category-icon">
@@ -1495,21 +1714,25 @@ footer a:hover {
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
             </div>
-            <h3>Offensive Security</h3>
+            <h3>Offensive Security &amp; Pentesting</h3>
           </div>
           <div class="tags-wrap">
             <span class="skill-tag">Nmap Port Scanning</span>
             <span class="skill-tag">Burp Suite Professional</span>
+            <span class="skill-tag">OWASP ZAP</span>
             <span class="skill-tag">OWASP Top 10</span>
+            <span class="skill-tag">ffuf Web Fuzzing</span>
+            <span class="skill-tag">SQLMap</span>
             <span class="skill-tag">Metasploit Framework</span>
             <span class="skill-tag">Hydra Brute-force</span>
-            <span class="skill-tag">ffuf Web Fuzzing</span>
             <span class="skill-tag">Hashcat</span>
+            <span class="skill-tag">Privilege Escalation</span>
+            <span class="skill-tag">CVSS v3.1</span>
             <span class="skill-tag">Kerberoasting Replication</span>
           </div>
         </article>
 
-        <!-- Scripting & Automation -->
+        <!-- Scripting & Programming -->
         <article class="skill-category">
           <div class="category-header">
             <div class="category-icon">
@@ -1518,187 +1741,151 @@ footer a:hover {
                 <polyline points="8 6 2 12 8 18"></polyline>
               </svg>
             </div>
-            <h3>Scripting &amp; Operations</h3>
+            <h3>Scripting &amp; Programming</h3>
           </div>
           <div class="tags-wrap">
-            <span class="skill-tag">Python 3</span>
-            <span class="skill-tag">Bash Scripting</span>
-            <span class="skill-tag">PowerShell Automation</span>
-            <span class="skill-tag">Regex Log Extraction</span>
-            <span class="skill-tag">Git / GitHub Actions</span>
-            <span class="skill-tag">SAP ERP Lookup</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">PowerShell</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">SAP ERP Workflows</span>
             <span class="skill-tag">CRM Ticket Triage</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 4. PROJECTS SECTION (4 Detailed Cards) -->
+    <!-- 4. PROJECTS SECTION (Strictly 2 Flagship Systems) -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-header">
-        <p class="section-label">03 // Practical Engineering</p>
+        <p class="section-label">03 // Flagship Implementations</p>
         <h2 class="section-title" id="projects-title">Featured Projects</h2>
-        <p class="section-desc">Real hands-on implementations showing problem identification, tooling, methodology, and measurable outcomes.</p>
+        <p class="section-desc">Production-grade cybersecurity platforms and enterprise detection architectures engineered from the ground up.</p>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: Enterprise AD Lab & Detection -->
-        <article class="project-card">
+        <!-- Flagship Project 1: ZeroBox (ctftracker.com) -->
+        <article class="project-card featured-flagship" id="project-ctftracker">
           <div class="project-header">
-            <span class="project-category">Detection Engineering · Home Lab</span>
+            <span class="project-category">Open Source · Production Platform · Flagship</span>
+            <div style="display:flex; gap:0.4rem; align-items:center; flex-wrap:wrap;">
+              <span class="status-badge live"><span class="pulse-dot"></span> 4,000+ VISITORS</span>
+              <span class="status-badge active" style="font-size:0.625rem;">REACT &amp; TYPESCRIPT</span>
+              <span class="status-badge active" style="font-size:0.625rem;">TAURI DESKTOP</span>
+            </div>
           </div>
-          <h3>Enterprise AD Lab &amp; Sysmon SIEM Detection</h3>
+          <h3>ZeroBox (ctftracker.com) — Open Source CTF Tracker &amp; Penetration Testing Workspace</h3>
           
           <div class="project-meta-block">
             <div class="meta-row">
               <span class="meta-label">Problem</span>
-              <p class="meta-value">Difficulty observing real-world lateral movement and credential dumping attacks without risking enterprise production assets.</p>
+              <p class="meta-value">Fragmented progress tracking across 1,000+ HTB &amp; TryHackMe machines, lack of realistic timed certification practice (OSCP, CPTS, CRTO, OSEP, CRTP), manual port transcription during recon, and friction generating reverse shells and managing evidence/notes across drills.</p>
             </div>
             <div class="meta-row">
-              <span class="meta-label">What I Did</span>
-              <p class="meta-value">Architected a dual-domain forest with Windows Server 2022, configured modular Sysmon logging (Event ID 1, 3, 10), ingested into Splunk, and executed Kerberoasting/AS-REP attacks to author high-fidelity SPL alerts.</p>
+              <span class="meta-label">Architecture</span>
+              <p class="meta-value">Designed, built, and launched an offline-first penetration testing workspace (web app and Tauri desktop app) in React and TypeScript. Features a catalog of 1,000+ Hack The Box and TryHackMe machines, 131 reverse shell templates, an 8-phase methodology, multi-host Nmap XML importer with one-click attack graph generation, masked credential &amp; hash evidence vault, CVSS v3.1 Markdown report generator, and a timed exam simulator for OSCP, CPTS, CRTO, OSEP, and CRTP with one-click ZIP submission bundle export.</p>
             </div>
             <div class="meta-row">
-              <span class="meta-label">Outcome</span>
-              <p class="meta-value">Built 4 verified alert rules covering MITRE ATT&amp;CK T1558 &amp; T1003 with zero false positives during normal domain administration.</p>
+              <span class="meta-label">Impact</span>
+              <p class="meta-value">Reached <strong>4,000+ visitors</strong> in production at <strong>ctftracker.com</strong> and open source on GitHub (<strong>0xdnd/ctf-tracker</strong>). Delivers 100% offline-first execution with zero accounts, zero cloud telemetry, sub-10ms query performance via IndexedDB/LocalStorage, and native desktop builds via Tauri.</p>
             </div>
             <div class="meta-row">
-              <span class="meta-label">Tools Used</span>
+              <span class="meta-label">Stack</span>
+              <div class="project-tools">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Tauri Desktop</span>
+                <span class="skill-tag">4,000+ Visitors</span>
+                <span class="skill-tag">1,000+ Machine Catalog</span>
+                <span class="skill-tag">131 Reverse Shells</span>
+                <span class="skill-tag">8-Phase Methodology</span>
+                <span class="skill-tag">Nmap XML Importer</span>
+                <span class="skill-tag">CVSS v3.1 Reports</span>
+                <span class="skill-tag">OSCP &amp; CPTS Simulator</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://ctftracker.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch ctftracker.com ↗</a>
+            <a href="https://github.com/0xdnd/ctf-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo (Open Source) ↗</a>
+          </div>
+        </article>
+
+        <!-- Flagship Project 2: Enterprise AD Lab & Sysmon Detection -->
+        <article class="project-card featured-flagship" id="project-ad-homelab">
+          <div class="project-header">
+            <span class="project-category">Detection Engineering · Enterprise Home Lab</span>
+            <span class="status-badge active"><span class="pulse-dot"></span> FULL TELEMETRY / ACTIVE</span>
+          </div>
+          <h3>Enterprise AD Homelab &amp; Sysmon SIEM Detection</h3>
+          
+          <div class="project-meta-block">
+            <div class="meta-row">
+              <span class="meta-label">Problem</span>
+              <p class="meta-value">Lack of high-fidelity detection rules for stealthy lateral movement, privilege escalation, and credential theft techniques (Kerberoasting, AS-REP roasting, DCSync) in enterprise Active Directory environments.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Architecture</span>
+              <p class="meta-value">Architected an enterprise dual-domain Active Directory forest on Windows Server 2022. Configured SwiftOnSecurity modular Sysmon telemetry (Event IDs 1, 3, 10), ingested security audit logs into Splunk SIEM via Universal Forwarders, mapped attack paths with BloodHound / SharpHound, and simulated adversary executions via Kali Linux.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Impact</span>
+              <p class="meta-value">Engineered and validated 5 production SPL alert rules covering MITRE ATT&amp;CK T1558 (Kerberoasting / AS-REP) and T1003 (OS Credential Dumping), delivering sub-minute offense correlation with zero false positives during normal domain operations.</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Stack</span>
               <div class="project-tools">
                 <span class="skill-tag">Windows Server 2022</span>
-                <span class="skill-tag">Active Directory</span>
-                <span class="skill-tag">Sysmon</span>
-                <span class="skill-tag">Splunk SPL</span>
-                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">Active Directory Forest</span>
+                <span class="skill-tag">Sysmon Telemetry (EID 1/3/10)</span>
+                <span class="skill-tag">Splunk Enterprise (SPL)</span>
+                <span class="skill-tag">BloodHound</span>
+                <span class="skill-tag">Mimikatz &amp; Impacket</span>
               </div>
             </div>
           </div>
 
           <div class="project-links">
-            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
-            <a href="#writeups" class="btn btn-secondary btn-sm">Read Detection Case Study</a>
-          </div>
-        </article>
-
-        <!-- Project 2: CTF Tracker Web App -->
-        <article class="project-card">
-          <div class="project-header">
-            <span class="project-category">Web Tool · Operations</span>
-          </div>
-          <h3>CTF Tracker &amp; Reverse-Shell Generator</h3>
-          
-          <div class="project-meta-block">
-            <div class="meta-row">
-              <span class="meta-label">Problem</span>
-              <p class="meta-value">Fragmented progress tracking across 300+ HTB &amp; TryHackMe challenges with high friction when switching machines and generating payload commands.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">What I Did</span>
-              <p class="meta-value">Engineered a single-page client-side dashboard indexing 399 machines with real-time category filtering, flag checkboxes, session timers, and a one-click reverse shell encoder.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Outcome</span>
-              <p class="meta-value">Zero backend dependency, full localStorage persistence, and sub-10ms query execution across the entire machine dataset.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Tools Used</span>
-              <div class="project-tools">
-                <span class="skill-tag">Vanilla JS</span>
-                <span class="skill-tag">CSS Grid</span>
-                <span class="skill-tag">Web Storage API</span>
-                <span class="skill-tag">GitHub Pages</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
-            <a href="https://0xdnd.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Live Tool ↗</a>
-          </div>
-        </article>
-
-        <!-- Project 3: Automated Network Scanner -->
-        <article class="project-card">
-          <div class="project-header">
-            <span class="project-category">Python · Network Security</span>
-          </div>
-          <h3>Automated Subnet Scanner &amp; Banner Grabber</h3>
-          
-          <div class="project-meta-block">
-            <div class="meta-row">
-              <span class="meta-label">Problem</span>
-              <p class="meta-value">Manual multi-subnet recon in lab environments was slow, resulting in inconsistent documentation and missed open service banners.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">What I Did</span>
-              <p class="meta-value">Developed a multi-threaded Python 3 utility combining raw socket connection checks, service banner interrogation, and automated Nmap script integration with structured JSON/Markdown output.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Outcome</span>
-              <p class="meta-value">Accelerated initial host enumeration by 70% and generated instant triage reports ready for incident or assessment notes.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Tools Used</span>
-              <div class="project-tools">
-                <span class="skill-tag">Python 3</span>
-                <span class="skill-tag">Sockets</span>
-                <span class="skill-tag">Threading</span>
-                <span class="skill-tag">Nmap API</span>
-                <span class="skill-tag">JSON</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
-          </div>
-        </article>
-
-        <!-- Project 4: SIEM Alert Pipeline & Playbook -->
-        <article class="project-card">
-          <div class="project-header">
-            <span class="project-category">SIEM · Incident Response</span>
-          </div>
-          <h3>SIEM Brute-Force Correlation &amp; Triage Playbook</h3>
-          
-          <div class="project-meta-block">
-            <div class="meta-row">
-              <span class="meta-label">Problem</span>
-              <p class="meta-value">High false-positive rate and alert fatigue during automated SSH/RDP authentication bursts in simulated enterprise networks.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">What I Did</span>
-              <p class="meta-value">Created custom IBM QRadar offense correlation rules thresholding failed logins followed by successful session establishment. Wrote a 5-step containment and triage playbook for Tier-1 analysts.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Outcome</span>
-              <p class="meta-value">Reduced MTTR (Mean Time to Respond) from 45 to under 8 minutes in drill scenarios with clear containment evidence trails.</p>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Tools Used</span>
-              <div class="project-tools">
-                <span class="skill-tag">IBM QRadar (AQL)</span>
-                <span class="skill-tag">FortiGate NGFW</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">IR Playbook</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Repo ↗</a>
-            <a href="#writeups" class="btn btn-secondary btn-sm">View IR Playbook</a>
+            <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Architecture &amp; Detection Rules ↗</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 5. CTFS & LABS SECTION -->
+    <!-- 5. CTFS & LABS SECTION (50+ Solved) -->
     <section class="section" id="ctf" aria-labelledby="ctf-title">
       <div class="section-header">
-        <p class="section-label">04 // Hands-on Validation</p>
-        <h2 class="section-title" id="ctf-title">CTFs &amp; Security Labs</h2>
-        <p class="section-desc">Active platform practice testing adversary methodologies, vulnerability discovery, and technical triage.</p>
+        <p class="section-label">04 // Hands-on Offensive &amp; Defensive Validation</p>
+        <h2 class="section-title" id="ctf-title">CTFs &amp; Security Labs (50+ Rooted Machines)</h2>
+        <p class="section-desc">Practical adversary emulation, vulnerability exploitation, and corresponding defensive detection triage across 50+ machines and challenges on Hack The Box, TryHackMe, and enterprise lab infrastructure.</p>
+      </div>
+
+      <!-- Telemetry Highlights Bar (4-Card Metric Row) -->
+      <div class="ctf-telemetry-grid" role="region" aria-label="CTF Telemetry Metrics">
+        <div class="telemetry-card">
+          <div class="telemetry-val" style="color:var(--status-emerald);">50+</div>
+          <div class="telemetry-label">50+ Machines Rooted</div>
+          <div class="telemetry-sub">HTB, THM &amp; Custom Labs</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-val" style="color:#f59e0b;">2 Active</div>
+          <div class="telemetry-label">Live Season Roots</div>
+          <div class="telemetry-sub">Reactor &amp; Kobold (Zero Spoilers)</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-val" style="color:var(--accent);">30+</div>
+          <div class="telemetry-label">Advanced Modules</div>
+          <div class="telemetry-sub">HTB CPTS &amp; CWES Tracks</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-val" style="color:var(--status-amber);">100%</div>
+          <div class="telemetry-label">100% Integrity</div>
+          <div class="telemetry-sub">Documented Detection Proofs</div>
+        </div>
       </div>
 
       <div class="ctf-platforms">
@@ -1706,8 +1893,8 @@ footer a:hover {
           <div class="platform-badge-icon">HTB</div>
           <div class="platform-info">
             <h4>Hack The Box Academy</h4>
-            <p class="platform-rank">Top 5% Rank</p>
-            <p class="platform-stat">30+ Offensive &amp; Defensive Modules</p>
+            <p class="platform-rank">CPTS &amp; CWES Candidate</p>
+            <p class="platform-stat">30+ Enterprise Modules · Active Directory, Web Exploitation &amp; Post-Exploitation</p>
           </div>
         </div>
 
@@ -1715,54 +1902,121 @@ footer a:hover {
           <div class="platform-badge-icon">THM</div>
           <div class="platform-info">
             <h4>TryHackMe</h4>
-            <p class="platform-rank">Top 10% Rank</p>
-            <p class="platform-stat">SOC Level 1 &amp; Active Directory Rooms</p>
+            <p class="platform-rank">SOC L1 &amp; AD Specialty</p>
+            <p class="platform-stat">Threat Emulation, Network Pivoting &amp; Security Operations</p>
           </div>
         </div>
 
         <div class="platform-card">
           <div class="platform-badge-icon">pico</div>
           <div class="platform-info">
-            <h4>picoCTF</h4>
-            <p class="platform-rank">Active Participant</p>
-            <p class="platform-stat">Web Exploitation &amp; Forensics</p>
+            <h4>picoCTF &amp; CTFtime</h4>
+            <p class="platform-rank">Active Competitor</p>
+            <p class="platform-stat">Web Exploitation, Reverse Engineering &amp; Forensics</p>
           </div>
         </div>
       </div>
 
       <div class="featured-walkthroughs">
-        <h3>Featured Machine &amp; Lab Walkthroughs</h3>
+        <div class="ctf-controls-bar">
+          <div class="ctf-filter-tabs" id="tableFilterTabs" role="tablist" aria-label="Filter walkthroughs by category">
+            <button type="button" class="ctf-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Featured (8)</button>
+            <button type="button" class="ctf-filter-btn" data-filter="active" role="tab" aria-selected="false" style="color:#f59e0b; border-color:rgba(245,158,11,0.4);">👑 Active Season Solves (2)</button>
+            <button type="button" class="ctf-filter-btn" data-filter="ad" role="tab" aria-selected="false">Windows &amp; Systems</button>
+            <button type="button" class="ctf-filter-btn" data-filter="web" role="tab" aria-selected="false">Web Security</button>
+            <button type="button" class="ctf-filter-btn" data-filter="privesc" role="tab" aria-selected="false">PrivEsc &amp; Linux</button>
+            <button type="button" class="ctf-filter-btn" data-filter="starting-point" role="tab" aria-selected="false">HTB Starting Point</button>
+            <button type="button" class="ctf-filter-btn" data-filter="blue" role="tab" aria-selected="false">Blue Team / Forensics</button>
+          </div>
+          <input type="text" id="ctfSearchInput" class="ctf-search-input" placeholder="Quick search machine, CVE, or technique (e.g. TwoMillion, SUID, Netmon)..." aria-label="Search solved machines">
+        </div>
+
         <table class="walkthrough-table">
           <thead>
             <tr>
               <th>Target Machine</th>
               <th>Platform</th>
+              <th>Category</th>
               <th>Difficulty</th>
               <th>Core Attack Vector</th>
               <th>SOC Detection Angle</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><strong>Support</strong></td>
-              <td>TryHackMe</td>
-              <td><span class="badge-tag med">Medium</span></td>
-              <td>Hydra Brute-force &rarr; Role Forging &rarr; LFI &rarr; Root Exec</td>
-              <td>Auth failure velocity monitoring &amp; web traversal URI alerts</td>
-            </tr>
-            <tr>
-              <td><strong>Forest</strong></td>
+          <tbody id="walkthroughTableBody">
+            <!-- 1. Live Active Season Targets (Hack The Box) -->
+            <tr data-category="active ad">
+              <td><strong>Reactor</strong></td>
               <td>Hack The Box</td>
-              <td><span class="badge-tag med">Medium</span></td>
-              <td>AS-REP Roasting &rarr; BloodHound Path &rarr; DCSync Attack</td>
-              <td>Event ID 4768 (Ticket without Pre-auth) &amp; DirSync replication audit</td>
+              <td><span class="cat-chip active-cat">👑 ACTIVE</span><span class="skill-tag">Git Recon &amp; Service</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>Exposed Git repository recon &rarr; Unintended service credential leak &rarr; Privilege escalation</td>
+              <td>Git directory web scraping detection &amp; sensitive file exposure alerts</td>
             </tr>
-            <tr>
-              <td><strong>CCNA Lab Simulator</strong></td>
-              <td>Custom Lab</td>
-              <td><span class="badge-tag info">871 Drills</span></td>
-              <td>Subnetting, VLAN Isolation, OSPF Convergence</td>
-              <td>Switchport port-security &amp; unauthorized MAC alerts</td>
+            <tr data-category="active privesc">
+              <td><strong>Kobold</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="cat-chip active-cat">👑 ACTIVE</span><span class="skill-tag">Sudo PrivEsc</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>Linux system enumeration &rarr; Sudo privilege misconfiguration &rarr; Root shell</td>
+              <td>Sudoers command execution audit &amp; process parent-child anomaly detection</td>
+            </tr>
+
+            <!-- 2. Web Security & API Exploitation -->
+            <tr data-category="web">
+              <td><strong>TwoMillion</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="cat-chip web">Web</span><span class="skill-tag">API Command Injection</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>CVE-2023-27163 / API Command Injection in <code>/api/v1/admin/vpn/generate</code> &rarr; Systemd PrivEsc</td>
+              <td>API gateway command injection auditing &amp; systemd unit modification alerts</td>
+            </tr>
+            <tr data-category="web">
+              <td><strong>Knife</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="cat-chip web">Web</span><span class="skill-tag">PHP Backdoor</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>PHP 8.1.0-dev User-Agent Backdoor RCE &rarr; sudo knife PrivEsc</td>
+              <td>WAF User-Agent anomaly signatures &amp; Sudo process telemetry (Sysmon Event ID 1)</td>
+            </tr>
+
+            <!-- 3. Windows & SMB Remote Exploitation -->
+            <tr data-category="ad">
+              <td><strong>Blue</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="cat-chip ad">Windows</span><span class="skill-tag">SMB Remote Exploit</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>MS17-010 EternalBlue SMB Remote Code Execution &rarr; NT AUTHORITY\SYSTEM</td>
+              <td>Sysmon Event ID 3 (SMB port 445 anomalies) &amp; spoolsv.exe memory corruption</td>
+            </tr>
+
+            <!-- 4. Linux Capabilities & PrivEsc -->
+            <tr data-category="privesc">
+              <td><strong>Cap</strong></td>
+              <td>Hack The Box</td>
+              <td><span class="cat-chip privesc">PrivEsc</span><span class="skill-tag">Linux Capabilities</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>IDOR on PCAP export &rarr; Plaintext Credential Sniffing &rarr; Python Cap_setuid SUID</td>
+              <td>Cleartext credential transmission alert &amp; Linux auditd execve with elevated capabilities</td>
+            </tr>
+
+            <!-- 5. HTB Starting Point Flagship -->
+            <tr data-category="starting-point">
+              <td><strong>Archetype</strong></td>
+              <td>HTB Starting Point</td>
+              <td><span class="cat-chip sp">HTB SP</span><span class="skill-tag">MSSQL &amp; WinRM</span></td>
+              <td><span class="badge-tag easy">Easy</span></td>
+              <td>MSSQL xp_cmdshell &rarr; PowerShell reverse shell &rarr; SQL admin creds in ConsoleHost_history.txt</td>
+              <td>Event ID 4688: sqlservr.exe executing cmd.exe / powershell &amp; PowerShell transcription audit</td>
+            </tr>
+
+            <!-- 6. Blue Team Incident Response & Forensics -->
+            <tr data-category="blue">
+              <td><strong>Investigating Windows</strong></td>
+              <td>TryHackMe</td>
+              <td><span class="cat-chip blue">Blue</span><span class="skill-tag">Host Forensics</span></td>
+              <td><span class="badge-tag med">Medium</span></td>
+              <td>PsExec Lateral Movement &rarr; Registry Run Key Persistence &rarr; Scheduled Task Backdoor</td>
+              <td>Sysmon EID 1 (PSEXESVC.exe), EID 13 (Run key modification), Event ID 4698 (Scheduled task created)</td>
             </tr>
           </tbody>
         </table>
@@ -1778,45 +2032,51 @@ footer a:hover {
       </div>
 
       <div class="timeline">
-        <!-- Milestone 1: MoD Bootcamp -->
+        <!-- Milestone 1: ITQ College -->
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-header">
             <span class="timeline-date tabular-nums">2024 — 2025</span>
             <span class="timeline-badge done">Completed · 650 Hours</span>
           </div>
-          <h3>ITQ Cybersecurity &amp; Infrastructure Bootcamp</h3>
-          <p class="timeline-org">Sponsored by Israel Ministry of Defense (MoD)</p>
-          <p class="timeline-desc">
-            Intensive hands-on technical curriculum on Israel's premier Cisco training facility: Enterprise TCP/IP, Windows Domain &amp; Active Directory administration, Linux System Engineering, Cisco Security, and FortiGate NGFW configurations with SOC workflows on IBM QRadar.
-          </p>
+          <h3>Cyber Security Implementer Program, ITQ (650 hours, Cisco and Fortinet specialization)</h3>
+          <p class="timeline-org">ITQ College</p>
+          <div class="timeline-desc">
+            <p>Hands-on training in Cisco network infrastructure, Microsoft servers, firewalls, and SIEM/SOC operations in an enterprise lab environment:</p>
+            <ul style="margin: 0.5rem 0 0 1.2rem; padding: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              <li><strong>Cisco IOS XE routers &amp; switches:</strong> VLANs and 802.1Q trunking, inter-VLAN routing, DHCP, OSPF, RIPv2, HSRP, ACLs, port security, NAT, and GRE and IPsec VPN tunnels.</li>
+              <li><strong>FortiGate NGFW:</strong> Set up and configured for a simulated two-site enterprise network (Israel and USA) — firewall policies, address objects, Virtual IPs (static NAT), antivirus and web filtering profiles, and a site-to-site IPsec VPN.</li>
+              <li><strong>Windows Server 2022 &amp; Linux:</strong> Active Directory, Group Policy (GPO), NTFS permissions, disk quotas, and DHCP with MAC filtering; studied LPI Linux Essentials and administered Kali and Ubuntu (Netplan, SSH, SCP, tcpdump).</li>
+              <li><strong>IBM Security QRadar SIEM &amp; Splunk SOAR:</strong> Configured QRadar SIEM with the WinCollect agent, Windows audit policies, and syslog forwarding through the FortiGate, and set up Splunk SOAR.</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Milestone 2: CompTIA Security+ (In Progress) -->
+        <!-- Milestone 2: HTB CPTS (In Progress) -->
         <div class="timeline-item in-progress">
           <div class="timeline-marker"></div>
           <div class="timeline-header">
             <span class="timeline-date tabular-nums">2025 — Present</span>
             <span class="timeline-badge wip">In Progress</span>
           </div>
-          <h3>CompTIA Security+ (SY0-701)</h3>
-          <p class="timeline-org">CompTIA</p>
+          <h3>Certified Penetration Testing Specialist (CPTS)</h3>
+          <p class="timeline-org">Hack The Box</p>
           <p class="timeline-desc">
-            Active preparation focusing on enterprise threat landscapes, cryptography, incident response procedures, identity management, and compliance frameworks.
+            Hands-on enterprise penetration testing path covering external recon, Active Directory attacks, lateral movement, pivoting, and professional report writing.
           </p>
         </div>
 
-        <!-- Milestone 3: eJPT (In Progress) -->
+        <!-- Milestone 3: HTB CWES (In Progress) -->
         <div class="timeline-item in-progress">
           <div class="timeline-marker"></div>
           <div class="timeline-header">
             <span class="timeline-date tabular-nums">2025 — Present</span>
             <span class="timeline-badge wip">In Progress</span>
           </div>
-          <h3>eLearnSecurity Junior Penetration Tester (eJPT)</h3>
-          <p class="timeline-org">INE Security</p>
+          <h3>Certified Web Exploitation Specialist (CWES)</h3>
+          <p class="timeline-org">Hack The Box</p>
           <p class="timeline-desc">
-            Practical hands-on assessment training covering network vulnerability assessment, web application exploitation, and post-exploitation pivoting.
+            Advanced web vulnerability research and exploitation focusing on complex auth bypasses, API security, SSRF, SSTI, custom deserialization, and source code review.
           </p>
         </div>
 
@@ -1827,10 +2087,10 @@ footer a:hover {
             <span class="timeline-date tabular-nums">2022 — 2025</span>
             <span class="timeline-badge done">Completed · 3 Years</span>
           </div>
-          <h3>Service Coordinator — Soldier Benefits</h3>
+          <h3>Service Coordinator, Soldier Benefits</h3>
           <p class="timeline-org">Israel Defense Forces (IDF)</p>
           <p class="timeline-desc">
-            Managed sensitive soldier entitlements and operational requests under strict deadlines and SLAs. Performed structured troubleshooting with SAP ERP and CRM ticketing systems.
+            Investigated and resolved hundreds of sensitive soldier entitlement cases in SAP, maintaining strict data confidentiality and high accuracy under daily SLAs. Prioritized and tracked complex escalations through CRM and ticketing workflows, writing clear case notes that sped up coordination between soldiers, commanders and external agencies.
           </p>
         </div>
 
@@ -1841,78 +2101,19 @@ footer a:hover {
             <span class="timeline-date tabular-nums">2020 — 2022</span>
             <span class="timeline-badge done">Completed · 10 Units</span>
           </div>
-          <h3>Computer Science Specialization</h3>
+          <h3>High School Diploma, Computer Science Major (10 Units)</h3>
           <p class="timeline-org">High School Diploma</p>
           <p class="timeline-desc">
-            10-unit computer science track. Final graduation project: an Android application in Java for cryptocurrency valuation tracking with web API integration.
+            10-unit computer science major. Final graduation project: native Android app in Java for real-time cryptocurrency prices and currency conversion (USD/EUR/ILS); web development with HTML and CSS.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 7. BLOG & WRITE-UPS SECTION -->
-    <section class="section" id="writeups" aria-labelledby="writeups-title">
-      <div class="section-header">
-        <p class="section-label">06 // Technical Notes</p>
-        <h2 class="section-title" id="writeups-title">Articles &amp; Field Notes</h2>
-        <p class="section-desc">Documented attack breakdowns, detection query strategies, and lab architecture write-ups.</p>
-      </div>
-
-      <div class="blog-list">
-        <!-- Post 1 -->
-        <article>
-          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
-            <div class="blog-main">
-              <h3>Deconstructing Kerberoasting: From SPN Request to Hash Extraction in Splunk</h3>
-              <div class="blog-meta">
-                <span class="blog-read-time">8 min read</span>
-                <span class="skill-tag">Active Directory</span>
-                <span class="skill-tag">Splunk SPL</span>
-                <span class="skill-tag">Event ID 4769</span>
-              </div>
-            </div>
-            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
-          </a>
-        </article>
-
-        <!-- Post 2 -->
-        <article>
-          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
-            <div class="blog-main">
-              <h3>THM 'Support' Machine Breakdown: BOLA, Cookie Forgery &amp; LFI Escalation</h3>
-              <div class="blog-meta">
-                <span class="blog-read-time">12 min read</span>
-                <span class="skill-tag">Web Security</span>
-                <span class="skill-tag">API Abuse</span>
-                <span class="skill-tag">Privilege Escalation</span>
-              </div>
-            </div>
-            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
-          </a>
-        </article>
-
-        <!-- Post 3 -->
-        <article>
-          <a href="https://github.com/0xdnd" target="_blank" rel="noopener noreferrer" class="blog-card">
-            <div class="blog-main">
-              <h3>Building a Low-Cost Enterprise Detection Lab with Proxmox &amp; Modular Sysmon</h3>
-              <div class="blog-meta">
-                <span class="blog-read-time">10 min read</span>
-                <span class="skill-tag">Home Lab</span>
-                <span class="skill-tag">Sysmon Config</span>
-                <span class="skill-tag">Blue Team</span>
-              </div>
-            </div>
-            <div class="blog-arrow" aria-hidden="true">&rarr;</div>
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <!-- 8. CONTACT & PGP SECTION -->
+    <!-- 6. CONTACT & PGP SECTION -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="section-header">
-        <p class="section-label">07 // Secure Comms</p>
+        <p class="section-label">06 // Secure Comms</p>
         <h2 class="section-title" id="contact-title">Contact &amp; Key Exchange</h2>
         <p class="section-desc">Open to Junior SOC Analyst positions, security internships, and CTF team collaborations.</p>
       </div>
@@ -1977,28 +2178,6 @@ footer a:hover {
               <span>resume.pdf (Download CV)</span>
             </a>
           </div>
-
-          <!-- PGP Public Key Accordion -->
-          <details class="pgp-block">
-            <summary class="pgp-summary">
-              <span>PGP Public Key</span>
-              <span class="mono" style="font-size:0.75rem; color:var(--accent)">[CLICK TO EXPAND]</span>
-            </summary>
-            <div class="pgp-content">
-              <div class="pgp-fingerprint">
-                Fingerprint: <strong>4A9F C781 2E90 5D13 88BA 0F62 B3D4 7891 A1E0 9C24</strong>
-              </div>
-              <pre class="pgp-key-text" id="pgpKey">-----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: OpenPGP.js v4.10.10
-Comment: Daniel Dayan (0xdnd) Security Key
-
-mQENBF/EXAMPLE...0xdndPublicVerificationKey...
-w6vDhsKbw57DgsKkw6LDk8OUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
-w5TDqMOdw57CkMOnw5fDocOUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
------END PGP PUBLIC KEY BLOCK-----</pre>
-              <button type="button" class="btn btn-secondary btn-sm" id="copyPgpBtn">Copy Public Key</button>
-            </div>
-          </details>
 
           <!-- Security Note -->
           <div class="security-notice">
@@ -2115,9 +2294,9 @@ w5TDqMOdw57CkMOnw5fDocOUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
 
   if (!reducedMotion && termEl) {
     const sequence = [
-      { cmd: "whoami", out: "daniel_dayan · Junior SOC Analyst", outColor: "var(--text-secondary)" },
-      { cmd: "cat focus.json", out: '{ "track": "SOC T1/T2", "siem": ["Splunk", "QRadar"], "lab": "Active Directory" }', outColor: "var(--accent)" },
-      { cmd: "soc-status --active", out: "[READY] Ingesting logs · Triage playbooks loaded", outColor: "var(--status-emerald)" }
+      { cmd: "whoami", out: "daniel_dayan · Junior SOC Analyst & Junior Penetration Tester (CPTS & CWES Candidate)", outColor: "var(--text-secondary)" },
+      { cmd: "cat credentials.json", out: '{ "tool": "ZeroBox (ctftracker.com)", "traction": "4,000+ visitors", "source": "open-source (0xdnd/ctf-tracker)", "ctfs_solved": "50+", "training": "ITQ Cyber Security Implementer (650 Hours)" }', outColor: "var(--accent)" },
+      { cmd: "soc-status --active", out: "[READY] Ingesting logs · Triage playbooks loaded · 50+ Root Proofs Verified", outColor: "var(--status-emerald)" }
     ];
 
     termEl.innerHTML = '';
@@ -2210,22 +2389,49 @@ w5TDqMOdw57CkMOnw5fDocOUw6jDncOewpDDp8OXw6HDlMOow53DnsKQw6fDl8Oh
     });
   }
 
-  // 6. Copy PGP Public Key
-  const copyPgpBtn = document.getElementById('copyPgpBtn');
-  const pgpKey = document.getElementById('pgpKey');
+  // 6. CTF Walkthrough Category Filtering & Real-Time Search
+  const tableFilterBtns = document.querySelectorAll('#tableFilterTabs .ctf-filter-btn');
+  const tableRows = document.querySelectorAll('#walkthroughTableBody tr');
+  const searchInput = document.getElementById('ctfSearchInput');
 
-  if (copyPgpBtn && pgpKey) {
-    copyPgpBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(pgpKey.textContent.trim());
-        const originalText = copyPgpBtn.textContent;
-        copyPgpBtn.textContent = 'Copied to Clipboard! ✓';
-        setTimeout(() => {
-          copyPgpBtn.textContent = originalText;
-        }, 2200);
-      } catch (err) {
-        copyPgpBtn.textContent = 'Select key manually';
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function filterCTFRows() {
+    tableRows.forEach(row => {
+      const category = row.getAttribute('data-category') || '';
+      const text = row.textContent.toLowerCase();
+      const catList = category.split(/\s+/);
+      const matchesCat = (currentCategory === 'all' || catList.includes(currentCategory));
+      const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
       }
+    });
+  }
+
+  if (tableFilterBtns.length && tableRows.length) {
+    tableFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tableFilterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        currentCategory = btn.getAttribute('data-filter') || 'all';
+        filterCTFRows();
+      });
+    });
+  }
+
+  if (searchInput && tableRows.length) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      filterCTFRows();
     });
   }
 })();
