@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="Daniel Dayan — Junior SOC Analyst & Junior Penetration Tester. Creator of ZeroBox (ctftracker.com), graduate of ITQ's Cyber Security Implementer program (650 hours), home Active Directory lab and 50+ rooted CTF machines." />
     <meta property="og:title" content="Daniel Dayan | Junior SOC Analyst &amp; Junior Penetration Tester" />
-    <meta property="og:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (14,000+ visitors), 650-hour ITQ Cyber Security Implementer program, Active Directory homelab, and 50+ rooted CTF machines." />
+    <meta property="og:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (15,000+ visitors), 650-hour ITQ Cyber Security Implementer program, Active Directory homelab, and 50+ rooted CTF machines." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://0xdnd.github.io/" />
     <meta property="og:image" content="https://0xdnd.github.io/og.png" />
@@ -14,7 +14,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Daniel Dayan | Junior SOC Analyst &amp; Junior Penetration Tester" />
-    <meta name="twitter:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (14,000+ visitors), 650-hour ITQ Cyber Security Implementer program, Active Directory homelab, and 50+ rooted CTF machines." />
+    <meta name="twitter:description" content="Junior SOC Analyst &amp; Junior Penetration Tester. Creator of ZeroBox (15,000+ visitors), 650-hour ITQ Cyber Security Implementer program, Active Directory homelab, and 50+ rooted CTF machines." />
     <meta name="twitter:image" content="https://0xdnd.github.io/og.png" />
     <link rel="icon" href="data:," />
     <title>Daniel Dayan — Junior SOC Analyst &amp; Junior Penetration Tester</title>
@@ -100,12 +100,12 @@
 
       /* Nav - floating pill */
       .nav-wrap{position:sticky;top:14px;z-index:50;padding:0 18px}
-      nav{max-width:1120px;margin:0 auto;background:color-mix(in srgb, var(--surface) 88%, transparent);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-sm)}
-      .nav-in{display:flex;align-items:center;gap:14px;padding:8px 10px 8px 14px}
+      nav{width:fit-content;max-width:min(760px,100%);margin:0 auto;background:color-mix(in srgb, var(--surface) 88%, transparent);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-sm)}
+      .nav-in{display:flex;align-items:center;gap:26px;padding:8px 10px 8px 14px}
       .nav-logo{font-family:"JetBrains Mono",monospace;font-weight:700;white-space:nowrap;color:var(--ink);text-decoration:none;font-size:.92rem;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;flex:none}
       .nav-logo .mark{width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:.78rem;line-height:1}
       .nav-logo span{color:var(--accent)}
-      .nav-links{display:flex;align-items:center;justify-content:space-evenly;gap:2px;flex:1 1 auto;min-width:0}
+      .nav-links{display:flex;align-items:center;justify-content:center;gap:32px;flex:0 1 auto;min-width:0}
       .nav-in a.nl{color:var(--ink-soft);text-decoration:none;font-size:.9rem;font-weight:600;padding:8px 11px;white-space:nowrap;border-radius:999px;transition:.15s}
       .nav-in a.nl:hover{color:var(--ink);background:var(--surface-2)}
       @media(max-width:900px){.nav-in{gap:8px}.nav-in a.nl{padding:8px 7px;font-size:.86rem}.nav-logo{font-size:.86rem}}
@@ -114,11 +114,11 @@
       /* Single row at every width: logo, links and theme toggle all fit on one line */
       @media(max-width:760px){
         .nav-wrap{padding:0 10px}
-        nav{border-radius:999px}
+        nav{width:auto;max-width:none;border-radius:999px}
         .nav-in{flex-wrap:nowrap;gap:6px;padding:6px 7px 6px 9px}
         .nav-logo{font-size:.72rem;gap:6px;letter-spacing:-.02em}
         .nav-logo .mark{width:22px;height:22px;border-radius:7px;font-size:.62rem}
-        .nav-links{display:flex;justify-content:space-evenly;gap:0}
+        .nav-links{display:flex;justify-content:center;gap:18px;flex:1 1 auto}
         .nav-in a.nl{font-size:.78rem;padding:6px 4px}
         .nav-in a.nl::after{left:4px;right:4px;bottom:2px}
         .theme-btn{width:30px;height:30px;min-height:30px}
@@ -467,7 +467,7 @@
             <div class="stats">
               <div class="stat-card">
                 <a href="https://ctftracker.com" target="_blank" rel="noopener">
-                  <b>14,000+</b>
+                  <b>15,000+</b>
                   <span>unique visitors to ZeroBox since Oct 7, 2026 <i>↗</i></span>
                 </a>
               </div>
@@ -612,7 +612,7 @@
           <article class="proj wide featured" data-cat="tool">
             <div class="top">
               <span class="cat">★ Featured — Open source tool</span>
-              <span class="badge live">Live since Oct 7, 2026 · 14,000+ unique visitors</span>
+              <span class="badge live">Live since Oct 7, 2026 · 15,000+ unique visitors</span>
             </div>
             <h3>ZeroBox (ctftracker.com)</h3>
             <p class="sub">Free offline CTF tracker for HackTheBox &amp; TryHackMe — OSCP/CPTS/CRTO exam simulator, writeups and cheatsheets.</p>
@@ -627,11 +627,11 @@
               </div>
               <div class="pblock result">
                 <span class="plabel">Result</span>
-                <p><b>14,000+ unique visitors</b> and 30,000+ pageviews in the first 39 days at <a href="https://ctftracker.com" target="_blank" rel="noopener">ctftracker.com</a> — from 95 visitors on launch day (Oct 7) to a peak of 1,200+ on Nov 4, now holding at 400–800 most days. Open source on GitHub (<a href="https://github.com/0xdnd/ctf-tracker" target="_blank" rel="noopener">0xdnd/ctf-tracker</a>): 45 stars, 4 forks, 8 releases — latest ZeroBox v2.5.5. Runs fully offline, with no accounts and no cloud telemetry; data stays in the browser (IndexedDB / LocalStorage).</p>
+                <p><b>15,000+ unique visitors</b> and 30,000+ pageviews in the first 39 days at <a href="https://ctftracker.com" target="_blank" rel="noopener">ctftracker.com</a> — from 95 visitors on launch day (Oct 7) to a peak of 1,200+ on Nov 4, now holding at 400–800 most days. Open source on GitHub (<a href="https://github.com/0xdnd/ctf-tracker" target="_blank" rel="noopener">0xdnd/ctf-tracker</a>): 45 stars, 4 forks, 8 releases — latest ZeroBox v2.5.5. Runs fully offline, with no accounts and no cloud telemetry; data stays in the browser (IndexedDB / LocalStorage).</p>
               </div>
             </div>
             <div class="traffic" aria-label="ctftracker.com traffic, October 7 to November 14, 2026">
-              <div><b>14,000+</b><span>Unique visitors (unique IPs) in 39 days</span></div>
+              <div><b>15,000+</b><span>Unique visitors (unique IPs) in 39 days</span></div>
               <div><b>30,000+</b><span>Total pageviews</span></div>
               <div><b>109,000+</b><span>Total requests</span></div>
               <div><b>1,200+</b><span>Peak day — Nov 4 (launch day: 95)</span></div>
@@ -894,7 +894,7 @@
           { t: 'vpn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux VPN server', d: 60 },
           { t: 'attacks&nbsp;&nbsp;Kerberoasting, BloodHound recon', d: 380 },
           { t: '<span class="p">$</span> <span class="c">zerobox --status</span>', d: 520 },
-          { t: '<span class="g">[live]</span> ctftracker.com — 14,000+ unique visitors', d: 380 },
+          { t: '<span class="g">[live]</span> ctftracker.com — 15,000+ unique visitors', d: 380 },
           { t: '<span class="p">$</span> <span class="c">ctf --rooted</span>', d: 520 },
           { t: '50+ machines: HTB, THM, picoCTF · 2 HTB active season', d: 300 }
         ];
